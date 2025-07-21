@@ -1,0 +1,59 @@
+
+
+
+
+#finder{
+  justify-content: center;
+  border-radius:100px;
+  height: 30px;
+  align-items: center;
+  width: 30px;
+  animation: animate_name infinite 20s linear forwards;
+  animation-fill-mode: forwards;
+  
+
+}
+
+@keyframes animate_name {
+  0% {
+    color: green;
+    
+    transform: rotate(20deg);
+    
+  }
+  33% {
+    color:yellow;
+    
+    
+  }
+  66%{
+    color: blue;
+    scale: 1.8;
+  }
+  100%{
+    color: brown;
+    
+  }
+}
+
+
+@keyframes left-to-right{
+  0%{
+    transform: translateX(0);
+    color: purple;
+    
+  }
+  33%{
+    transform: translateY(100%);
+    transform: rotate(360deg);
+    border-radius: 0;
+    scale: 2;
+  }
+  66%{
+    transform: translateX(100%) translateY(100%);
+    color: green;
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
