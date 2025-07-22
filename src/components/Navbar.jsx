@@ -220,7 +220,7 @@ export const Navbar = () => {
                 </div>
 
                 {/* HAMBURGER MENU */}
-                <div className="text-primary md:hidden flex justify-end items-center gap-2">
+                <div className="text-primary md:hidden hidden  flex justify-end items-center gap-2">
                     <box-icon name={isMenuOpen ? "x" : "menu"} size="md" color="text-primary" onClick={handlerIsMenuOpen}></box-icon>
                 </div>
 
