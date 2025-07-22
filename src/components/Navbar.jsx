@@ -178,7 +178,7 @@ export const Navbar = () => {
                 }
                 
            <div className='flex  md:flex'>
-           { /*<input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>*/}
+            <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
 
@@ -258,7 +258,7 @@ export const Navbar = () => {
                     </div>
                 </ul>
             </div>
-          <div        className='flex    mb-5 absolute bottom-10   lg:hidden'> <Footer/></div>
+          <div        className='absolute inset-x-0 bottom-5 h-16   lg:hidden'> <Footer/></div>
 
 
             <Outlet />
