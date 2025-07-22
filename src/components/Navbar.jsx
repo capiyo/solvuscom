@@ -177,7 +177,7 @@ export const Navbar = () => {
                     </ul>
                 }
                 
-           <div className='flex  md:flex'>
+           <div className='flex  hidden  md:flex'>
             <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
@@ -192,7 +192,7 @@ export const Navbar = () => {
 
                     {
                         localStorage.getItem("usertoken") ?
-                            <div className='md:block  '>
+                            <div className='md:block hidden  '>
 
                                 <div className='flex flex-col  '>
                                     <div className='flex flex-col w-[80px]  sm:fixed md:relative lg:relative  items-center bg-green-500 rounded-full '>                                     
