@@ -8,7 +8,8 @@ import MessageIcon from '@mui/icons-material/Message';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { MdAccountBox } from 'react-icons/md';
-import PostIcon from "@mui/icons-material/Add"
+import PostIcon from "@mui/icons-material/AddToPhotos"
+import { green } from '@mui/material/colors';
 
 import { Profile } from './Home/profile';
 import { PostJob } from '../Pages/Employer/PostJob'
@@ -32,16 +33,16 @@ export  function Footer() {
             <div className=' flex w-[400px]  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<Chats/>:""}</div>
             <div className=' flex w-[400px]  absolute  mb-[50px] mt-[100px]'> {value==="post"?<PostJob/>:""}</div>
 
-            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100vw" ,background:"#22c55E"}} value={value} onChange={handleChange}>
+            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100vw" ,background:"white"}} value={value} onChange={handleChange}>
             <BottomNavigationAction
                 label="Account"
                 value="account"
-                icon={<AccountIcon />}
+                icon={<AccountIcon   sx={{ color: green[500] }}/>}
             />
               <BottomNavigationAction
                 label="Post"
                 value="post"
-                  icon={<PostIcon />}
+                  icon={<PostIcon  sx={{ color: green[500] }}/>}
               
             />
            
@@ -49,7 +50,7 @@ export  function Footer() {
             <BottomNavigationAction
                 label="Chats"
                 value="chats"
-                icon={<MessageIcon />}
+                icon={<MessageIcon    sx={{ color: green[500] }}/>}
             />
           
          
