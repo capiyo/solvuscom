@@ -325,21 +325,21 @@ const showRequest=(jobId)=>{
             <div className={`flex justify-between flex-row ` }> 
 
                 {job.posterId===myId?    <Link to={`/current-job/${job._id}`}>
-                    <button      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
+                    <div      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
                                  onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
-                     text-white text-sm py-1 px-1 mt-10 rounded-md py-1 px-1 rounded border-2 border-red-500 hover:border-blue-700    `}>
+                     text-white text-sm    mt-10 `}>
                         <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold'><FaEye/>view </div>
-                        </button>
+                        </div>
                         
                 </Link>
                 : <div>
                
-                    <button  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
-                     text-white text-sm py-1 px-4 mt-10   rounded-md   py-1 px-1 rounded border-2 border-red-500 hover:border-blue-500`}>
+                    <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
+                     text-white text-sm py-1 px-4 mt-10   `}>
 
-                           <div    className='sm:text-[9px] flex flex-row  text-violet-900 font-bold'><FaRedRiver/>follow</div>
+                           <div    className='sm:text-[5px] flex flex-row  text-violet-900 '><FaRedRiver/>follow</div>
                       
-                        </button>
+                        </div>
                 </div>}
 
 
@@ -348,18 +348,18 @@ const showRequest=(jobId)=>{
 
                  <div>
                
-                    <button  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
-                     text-white text-sm py-1 px-4 mt-10   rounded-md   py-1 px-1 rounded border-2 border-red-500 hover:border-blue-500`}>
+                    <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
+                     text-white text-sm    mt-10`}>
 
-                           <div    className='flex flex-row  text-green-500 font-[1000] sm:text-[9px] '><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-green-500  sm:text-[10px] '><FaMale/>@{job.posterName}</div>
                       
-                        </button>
+                        </div>
                 </div>
 
                  <div >
-                    <button onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
-                     text-white text-sm py-1 px-4  mt-10  rounded-md    py-1 px-1 rounded border-2 border-red-500 hover:border-blue-700`}>
-                        <div    className='flex flex-row text-blue-500 font-bold sm:text-[9px] '><FaHandHolding/>Request</div> </button>
+                    <div onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
+                     text-white text-sm py-1 px-4  mt-10   `}>
+                        <div    className='flex flex-row text-blue-500  sm:text-[9px] '><FaHandHolding/>Request</div> </div>
                         
                 </div> 
                   
