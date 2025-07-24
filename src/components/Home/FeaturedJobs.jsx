@@ -306,9 +306,9 @@ const showRequest=(jobId)=>{
                        
                         <box-icon size='14px' name='time'></box-icon>
                         <div className='flex flex-col'>
-                        <span className='pl-1 sm:text-[9px] '>Budget: Ksh.{job.budget} </span>
-                        <span className='pl-1 sm:text-[9px] '>Deadline: {job.deadline} </span>
-                        <span className='pl-1 sm:text-[9px] '>Time: {job.timePosted} </span>
+                        <span className='pl-1 sm:text-[10px] '>Budget: Ksh.{job.budget} </span>
+                        <span className='pl-1 sm:text-[5px] '>Deadline: {job.deadline} </span>
+                        <span className='pl-1 sm:text-[5px] '>Time: {job.timePosted} </span>
 
                         
                         </div>
@@ -366,8 +366,8 @@ const showRequest=(jobId)=>{
                  
                 </div>
                
-                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[9px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[9px] '>#36</span> <FaHeart/>   
+                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px] '>#36</span> <FaHeart/>   
                            
                          
                         </span>
