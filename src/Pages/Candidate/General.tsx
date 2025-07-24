@@ -17,17 +17,20 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{ background:"#ffffff",   height:"700px" ,  borderRadius:"10px" ,width: '800%', typography: 'body1' }}>
+    <Box sx={{ background:'#43A047',   height:"700px" ,  borderRadius:"10px" ,width: '800%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList    sx={{background:"#43A047", borderBottomLeftRadius:"20px" ,borderBottomRightRadius:"20px"}}    onChange={handleChange} aria-label="lab API tabs example">
             <Tab  label="Info" value="1" />
             <Tab label="Update" value="2" />
+            <Tab label="History" value="3" />
+
    
           </TabList>
         </Box>
         <TabPanel value="1"><ProfileInfo/></TabPanel>
         <TabPanel value="2"><Profile/></TabPanel>
+        <TabPanel value="3"><Profile/></TabPanel>
       </TabContext>
     </Box>
   );

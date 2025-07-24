@@ -74,11 +74,11 @@ const loadLikes=(jobId)=>{
     return (
         <div className=''>
             
-                           <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary mt-4 md:mt-2'>
+                           <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary mt-2 md:mt-2 sm:mt-1'>
                             Our Featured Jobs,<span className='text-blue-600'>
                             quality and trust</span></h1></div>
                            
-            <div className='grid sm:grid-cols-2 md:grid-cols-3  gap-2'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3  gap-1'>
 
                 {jobs.map((job, key) => <Card    key={key} job={job} />)}
             
@@ -286,40 +286,40 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-lg      card    hover:border-green-800
+        <div      className={`border items-center shadow-sm     card    hover:border-green-800
         rounded-xl `}>
           
             {/* Card Header */}
             <div className='flex items-center   gap-1'>
                 <div>
                     {/* company image */}
-                    <img src={logoURL} alt={job.companyName} className='w-12 rounded-full' />
+                    <img src={logoURL} alt={job.companyName} className='w-8 rounded-full' />
                 </div>
                 <div>
                     <div className='flex '>
-                           <svg class="w-8 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <svg class="w-4 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 
                               2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>                      
                     </svg>
                           
                        
-                        <box-icon size='18px' name='time'></box-icon>
+                        <box-icon size='14px' name='time'></box-icon>
                         <div className='flex flex-col'>
-                        <span className='pl-1'>Budget: Ksh.{job.budget} </span>
-                        <span className='pl-1'>Deadline: {job.deadline} </span>
-                        <span className='pl-1'>Time: {job.timePosted} </span>
+                        <span className='pl-1 sm:text-[9px] '>Budget: Ksh.{job.budget} </span>
+                        <span className='pl-1 sm:text-[9px] '>Deadline: {job.deadline} </span>
+                        <span className='pl-1 sm:text-[9px] '>Time: {job.timePosted} </span>
 
                         
                         </div>
 
                     </div>
-                    <h1 className='font-bold text-md text-blue-500'>{job.jobTitle}</h1>
+                    <h1 className=' sm:text-[12px]  font-bold text-md text-blue-500'>{job.jobTitle}</h1>
                 </div>
             </div>
             <div className='flex flex-col'>
                 <FaBrain/>
-                <p className='py-4  lg:text-lg    sm:text-sm/6'>{job.description}</p>
+                <p className='py-4  lg:text-lg    sm:text-sm/8'>{job.description}</p>
             </div>
             {/* Footer - apply now and location */}            
             <div className={`flex justify-between flex-row ` }> 
@@ -328,7 +328,7 @@ const showRequest=(jobId)=>{
                     <button      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
                                  onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
                      text-white text-sm py-1 px-1 mt-10 rounded-md py-1 px-1 rounded border-2 border-red-500 hover:border-blue-700    `}>
-                        <div    className='flex flex-row  text-purple-400 font-bold'><FaEye/>view </div>
+                        <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold'><FaEye/>view </div>
                         </button>
                         
                 </Link>
@@ -337,7 +337,7 @@ const showRequest=(jobId)=>{
                     <button  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm py-1 px-4 mt-10   rounded-md   py-1 px-1 rounded border-2 border-red-500 hover:border-blue-500`}>
 
-                           <div    className='flex flex-row  text-violet-900 font-bold'><FaRedRiver/>follow</div>
+                           <div    className='sm:text-[9px] flex flex-row  text-violet-900 font-bold'><FaRedRiver/>follow</div>
                       
                         </button>
                 </div>}
@@ -351,7 +351,7 @@ const showRequest=(jobId)=>{
                     <button  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm py-1 px-4 mt-10   rounded-md   py-1 px-1 rounded border-2 border-red-500 hover:border-blue-500`}>
 
-                           <div    className='flex flex-row  text-green-500 font-[1000]'><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-green-500 font-[1000] sm:text-[9px] '><FaMale/>@{job.posterName}</div>
                       
                         </button>
                 </div>
@@ -359,15 +359,15 @@ const showRequest=(jobId)=>{
                  <div >
                     <button onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
                      text-white text-sm py-1 px-4  mt-10  rounded-md    py-1 px-1 rounded border-2 border-red-500 hover:border-blue-700`}>
-                        <div    className='flex flex-row text-blue-500 font-bold'><FaHandHolding/>Request</div> </button>
+                        <div    className='flex flex-row text-blue-500 font-bold sm:text-[9px] '><FaHandHolding/>Request</div> </button>
                         
                 </div> 
                   
                  
                 </div>
                
-                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500'>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm'>#36</span> <FaHeart/>   
+                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[9px] '>
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[9px] '>#36</span> <FaHeart/>   
                            
                          
                         </span>

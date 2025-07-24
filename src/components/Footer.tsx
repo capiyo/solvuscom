@@ -10,12 +10,14 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { MdAccountBox } from 'react-icons/md';
 import PostIcon from "@mui/icons-material/AddToPhotos"
 import { green } from '@mui/material/colors';
+import PauseCircleFilledOutlinedIcon from '@mui/icons-material/PauseCircleFilledOutlined';
 
 import { Profile } from './Home/profile';
 import { PostJob } from '../Pages/Employer/PostJob'
 import General from '../Pages/Candidate/General';
 import { SimilarJobs } from './SimilarJobs';
 import { Chats } from './Home/Chats';
+import { Pause } from 'lucide-react';
 
 export  function Footer() {
     const [value, setValue] = React.useState('recents');
@@ -28,7 +30,7 @@ export  function Footer() {
     };
 
     return (
-        <div className={`flex bg-green-500    w-full ${height} items-end `}>
+        <div className={`flex bg-green-500 mx-auto    w-full ${height} items-center `}>
             <div className=' flex w-[400px]  absolute  mb-[50px]  mt-[100px]'> {value==="account"?<General/>:""}</div>
             <div className=' flex w-[400px]  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<Chats/>:""}</div>
             <div className=' flex w-[400px]  absolute  mb-[50px] mt-[100px]'> {value==="post"?<PostJob/>:""}</div>
@@ -38,6 +40,12 @@ export  function Footer() {
                 label="Account"
                 value="account"
                 icon={<AccountIcon   sx={{ color: green[500] }}/>}
+            />
+            <BottomNavigationAction
+                label="Pending"
+                value="Pending"
+                  icon={<PauseCircleFilledOutlinedIcon  sx={{ color: green[500] }}/>}
+              
             />
               <BottomNavigationAction
                 label="Post"
