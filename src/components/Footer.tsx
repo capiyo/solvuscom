@@ -18,6 +18,7 @@ import General from '../Pages/Candidate/General';
 import { SimilarJobs } from './SimilarJobs';
 import { Chats } from './Home/Chats';
 import { Pause } from 'lucide-react';
+import { Pending } from './Home/Pending';
 
 export  function Footer() {
     const [value, setValue] = React.useState('recents');
@@ -32,9 +33,9 @@ export  function Footer() {
     return (
         <div className={`flex bg-green-500 mx-auto    w-full ${height} items-center `}>
             <div className=' flex w=full  absolute  mb-[50px]  mt-[100px]'> {value==="account"?<General/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<SimilarJobs title="Django"/>:""}</div>
+            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<Chats/>:""}</div>
             <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="post"?<PostJob/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="pending"?<SimilarJobs title="Django"/>:""}</div>
+            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="pending"?<Pending/>:""}</div>
 
             <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100vw" ,background:"white"}} value={value} onChange={handleChange}>
             <BottomNavigationAction

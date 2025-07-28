@@ -42,7 +42,7 @@ export const Chats = () => {
         <div className=''>
             <h1 className='text-center text-xl    mx-auto md:text-2xl font-bold text-primary mt-8 md:mt-6   '>All Aplicants</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-1 w-[360px]   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-4 bg-white  rounded-xl  border-2 border-red-500 hover:border-red-800 '>
-                {applicants.map((people, key) => <Card key={key}  applicants={people}  title={title}/>)}
+                {applicants.map((people, key) => <Card key={key}  applicants={people} />)}
             </div>
         </div>
     )
@@ -194,7 +194,7 @@ console.log(paymentData)
     return (
 
 
-        <div className='border shadow-lg hover:border-green-800       lg:w-[700px]   rounded-xl flex-row  bg-green-100 card'>
+        <div className='border shadow-lg hover:border-green-800    w-full    lg:w-[700px]   rounded-xl flex-row  bg-green-100 card'>
           
         
             
