@@ -21,7 +21,8 @@ export default function LabTabs() {
     <Box sx={{ background:green[300],   height:"700px",width: '100%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList    sx={{background:green[300], borderBottomLeftRadius:"20px",width:'100%',justifyContent:"center" ,borderBottomRightRadius:"20px"}}    onChange={handleChange} aria-label="lab API tabs example">
+          <TabList    sx={{background:green[300], borderBottomLeftRadius:"20px",width:'100%',display:"flex",justifyContent: "space-evenly", borderBottomRightRadius:"20px"}}   
+           onChange={handleChange} aria-label="lab API tabs example">
             <Tab sx={{ textTransform: 'none' }} label="Update" value="2" />
             <Tab  sx={{ textTransform: 'none' }} label="Info" value="1" />
             <Tab sx={{ textTransform: 'none' }} label="History" value="3" />

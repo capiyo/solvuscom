@@ -131,7 +131,7 @@ export const PostJob = () => {
 
 
     return (
-        <div className='w-[360px]   h-[600px] overflow-y-auto   mx-auto  container mt-2  xl:px-24 px-4 bg-white  rounded-xl  border-2 border-red-500 hover:border-red-800 '>
+        <div className='w-full   h-[600px] overflow-y-auto   mx-auto  container mt-2  xl:px-24 px-4 bg-white  rounded-xl  border-2 border-red-500 hover:border-red-800 '>
             <div className=' py-6 px-4 lg:px-16 rounded-xl'>
 
                 {/* FORM */}
