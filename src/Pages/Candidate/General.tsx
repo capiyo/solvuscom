@@ -7,6 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Profile } from '../../components/Home/profile';
 import { PostJob } from '../Employer/PostJob';
 import  {ProfileInfo} from "./ProfileInfo"
+import { green } from '@mui/material/colors';
 import {SimilarJobs} from "../../components/SimilarJobs"
 
 export default function LabTabs() {
@@ -17,12 +18,12 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{ background:'#43A047',   height:"700px" ,  borderRadius:"10px" ,width: '800%', typography: 'body1' }}>
+    <Box sx={{ background:green[300],   height:"700px" ,  borderRadius:"10px" ,width: '800%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList    sx={{background:"#43A047", borderBottomLeftRadius:"20px" ,borderBottomRightRadius:"20px"}}    onChange={handleChange} aria-label="lab API tabs example">
-            <Tab  label="Info" value="1" />
+          <TabList    sx={{background:green[300], borderBottomLeftRadius:"20px" ,borderBottomRightRadius:"20px"}}    onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Update" value="2" />
+            <Tab  label="Info" value="1" />
             <Tab label="History" value="3" />
 
    
