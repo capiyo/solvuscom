@@ -9,6 +9,7 @@ import { PostJob } from '../Employer/PostJob';
 import  {ProfileInfo} from "./ProfileInfo"
 import { green } from '@mui/material/colors';
 import {SimilarJobs} from "../../components/SimilarJobs"
+import { Update } from './Update';
 
 export default function LabTabs() {
   const [value, setValue] = React.useState('1');
@@ -18,7 +19,7 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{ background:green[300],   height:"700px",width: '100%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
+    <Box sx={{ background:green[500],position:"absolute",bottom:50,   height:"600px",width: '100vw' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList    sx={{background:green[300], borderBottomLeftRadius:"20px",width:'100%',display:"flex",justifyContent: "space-evenly", borderBottomRightRadius:"20px"}}   
@@ -31,8 +32,8 @@ export default function LabTabs() {
           </TabList>
         </Box>
         <TabPanel value="1"><ProfileInfo/></TabPanel>
-        <TabPanel value="2"><Profile/></TabPanel>
-        <TabPanel value="3"><Profile/></TabPanel>
+        <TabPanel value="2"><Update/></TabPanel>
+        <TabPanel value="3"><Update/></TabPanel>
       </TabContext>
     </Box>
   );

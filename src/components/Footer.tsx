@@ -31,21 +31,29 @@ export  function Footer() {
     };
 
     return (
-        <div className={`flex bg-green-500    w-full ${height} items-center `}>
-            <div className=' flex w=full  absolute  mb-[50px]  '> {value==="account"?<PostJob/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] '> {value==="chats"?<Chats/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] '> {value==="post"?<PostJob/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] '> {value==="pending"?<Pending/>:""}</div>
+        <div className={`flex  justify-evenly    w-full`}>
+            
+            
+            <div className=' flex w-full  '> {value==="info"?<General/>:""}</div>
+            <div className=' flex w-full  '> {value==="pending"?<Pending/>:""}</div>
+            <div className=' flex w-full  '> {value==="post"?<PostJob/>:""}</div>
+            <div className=' flex w-full  '> {value==="chats"?<Chats/>:""}</div>
 
-            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white"}} value={value} onChange={handleChange}>
+            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white",justifyItems:"space-evenly"}} value={value} onChange={handleChange}>
+              
             <BottomNavigationAction
-                label="Account"
-                value="account"
+                label="Info"
+                value="info"
                 icon={<AccountIcon   sx={{ color: green[500] }}/>}
             />
+           
+
+            
+            
+          
             <BottomNavigationAction
-                label="Pending"
-                value="Pending"
+                label="pending"
+                value="pending"
                   icon={<PauseCircleFilledOutlinedIcon  sx={{ color: green[500] }}/>}
               
             />
@@ -55,13 +63,16 @@ export  function Footer() {
                   icon={<PostIcon  sx={{ color: green[500] }}/>}
               
             />
-           
-
+            
             <BottomNavigationAction
                 label="Chats"
                 value="chats"
                 icon={<MessageIcon    sx={{ color: green[500] }}/>}
             />
+           
+
+            
+            
           
          
         </BottomNavigation>

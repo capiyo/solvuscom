@@ -286,7 +286,7 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-sm     card    hover:border-green-800
+        <div      className={`border items-center shadow-sm     card    
         rounded-xl `}>
           
             {/* Card Header */}
