@@ -39,7 +39,7 @@ export  function Footer() {
             <div className=' flex w-full  '> {value==="post"?<PostJob/>:""}</div>
             <div className=' flex w-full  '> {value==="chats"?<Chats/>:""}</div>
 
-            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white",justifyItems:"space-evenly"}} value={value} onChange={handleChange}>
+            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white",justifyContent:"space-evenly"}} value={value} onChange={handleChange}>
               
             <BottomNavigationAction
                 label="Info"
@@ -69,6 +69,7 @@ export  function Footer() {
                 value="chats"
                 icon={<MessageIcon    sx={{ color: green[500] }}/>}
             />
+            
            
 
             

@@ -259,7 +259,7 @@ export const Navbar = () => {
                     </div>
                 </ul>
             </div>
-          <div        className=' flex absolute  bottom-5 h-16   lg:hidden '> <Footer/></div>
+          <div        className=' flex absolute  bottom-10 h-16   lg:hidden '> <Footer/></div>
 
 
             <Outlet />
