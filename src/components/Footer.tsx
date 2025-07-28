@@ -31,13 +31,13 @@ export  function Footer() {
     };
 
     return (
-        <div className={`flex bg-green-500 mx-auto    w-full ${height} items-center `}>
-            <div className=' flex w=full  absolute  mb-[50px]  mt-[100px]'> {value==="account"?<PostJob/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<Chats/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="post"?<PostJob/>:""}</div>
-            <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="pending"?<Pending/>:""}</div>
+        <div className={`flex bg-green-500    w-full ${height} items-center `}>
+            <div className=' flex w=full  absolute  mb-[50px]  '> {value==="account"?<PostJob/>:""}</div>
+            <div className=' flex w-full  absolute  mb-[50px] '> {value==="chats"?<Chats/>:""}</div>
+            <div className=' flex w-full  absolute  mb-[50px] '> {value==="post"?<PostJob/>:""}</div>
+            <div className=' flex w-full  absolute  mb-[50px] '> {value==="pending"?<Pending/>:""}</div>
 
-            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100vw" ,background:"white"}} value={value} onChange={handleChange}>
+            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white"}} value={value} onChange={handleChange}>
             <BottomNavigationAction
                 label="Account"
                 value="account"
