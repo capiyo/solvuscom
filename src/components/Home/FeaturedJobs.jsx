@@ -314,7 +314,7 @@ const showRequest=(jobId)=>{
                         </div>
 
                     </div>
-                    <h1 className=' sm:text-[12px]  font-bold text-md text-blue-500'>{job.jobTitle}</h1>
+                    <h1 className=' sm:text-[12px]   text-md text-blue-500'>{job.jobTitle}</h1>
                 </div>
             </div>
             <div className='flex flex-col'>
