@@ -32,7 +32,7 @@ export  function Footer() {
 
     return (
         <div className={`flex bg-green-500 mx-auto    w-full ${height} items-center `}>
-            <div className=' flex w=full  absolute  mb-[50px]  mt-[100px]'> {value==="account"?<General/>:""}</div>
+            <div className=' flex w=full  absolute  mb-[50px]  mt-[100px]'> {value==="account"?<PostJob/>:""}</div>
             <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="chats"?<Chats/>:""}</div>
             <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="post"?<PostJob/>:""}</div>
             <div className=' flex w-full  absolute  mb-[50px] mt-[100px]'> {value==="pending"?<Pending/>:""}</div>
