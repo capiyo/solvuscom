@@ -31,15 +31,15 @@ export  function Footer() {
     };
 
     return (
-        <div className={`flex  justify-evenly    w-full`}>
+        <div className={`flex    w-screen`}>
             
             
-            <div className=' flex w-full  '> {value==="info"?<General/>:""}</div>
-            <div className=' flex w-full  '> {value==="pending"?<Pending/>:""}</div>
-            <div className=' flex w-full  '> {value==="post"?<PostJob/>:""}</div>
-            <div className=' flex w-full  '> {value==="chats"?<Chats/>:""}</div>
+            <div className=' flex   '> {value==="info"?<General/>:""}</div>
+            <div className=' flex'> {value==="pending"?<Pending/>:""}</div>
+            <div className=' flex '> {value==="post"?<PostJob/>:""}</div>
+            <div className=' flex   '> {value==="chats"?<Chats/>:""}</div>
 
-            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white",justifyContent:"space-evenly"}} value={value} onChange={handleChange}>
+            <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white"}} value={value} onChange={handleChange}>
               
             <BottomNavigationAction
                 label="Info"
