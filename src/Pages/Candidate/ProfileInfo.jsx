@@ -113,7 +113,7 @@ export const ProfileInfo = () => {
 
 
     return(
-          <div className='w-[360px]   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-4 bg-white  rounded-xl  border-2 border-red-500 hover:border-red-800   '>
+          <div className='w-[360px]   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-4 bg-green-300  rounded-xl    '>
                <h1 className='text-sm  font-bold text-gray-700'>UserName:{userName}</h1>
 
             <div className='bg-gradient-white  mx-auto py-12 md:px-14 px-8 rounded-lg'>
@@ -134,13 +134,13 @@ export const ProfileInfo = () => {
 
                             {/* ADDITIONALS */}
                             <div className='flex flex-col'>
-                                <div className='bg-blue-300 rounded-lg py-4 md:py-5 text-center'>
+                                <div className='  py-4 md:py-5 text-center'>
                                     <h2 className=' md:text-md  text-gray-700'>Primary Skill:</h2><p className='text-sm md:text-lg font-bold'>{pSkill}</p>
                                 </div>
-                                <div className='bg-green-300 rounded-lg '>
+                                <div className='flex '>
                                     <h2 className=' text-gray-700'>Other Skills</h2><p className='text-sm md:text-lg font-bold'>{skills}</p>
                                 </div>
-                                <div className='bg-blue-300 rounded-lg py-4 md:py-5 text-center'>
+                                <div className='py-4 md:py-5 text-center'>
                                     <h2 className='text-gray-700'>Location</h2><p className='text-sm md:text-lg font-bold'>{location}</p>
                                 </div>
                                 </div>
@@ -152,7 +152,7 @@ export const ProfileInfo = () => {
                                 <h2 className=' text-gray-700'>Education Level</h2><p className='text-sm md:text-lg font-bold'>{education}</p>
                                     
                                 <h2 className=' text-gray-700'>hourly charge rate</h2><p className='text-sm md:text-lg font-bold'>{wage}</p>
-                                 <div className='bg-blue-300 rounded-lg py-4 md:py-5 text-center'>
+                                 <div className='  py-4 md:py-5 text-center'>
                                     <h2 className='text-xs md:text-md font-semibold text-gray-700'>Location</h2><p className='text-sm md:text-lg font-bold'>{location}</p>
                                 </div>
                                 <h2 className='my-2 font-bold'> About Me</h2>
