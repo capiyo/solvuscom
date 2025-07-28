@@ -113,7 +113,7 @@ export const ProfileInfo = () => {
 
 
     return(
-          <div className='w-[360px]   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-4 '>
+          <div className='w-full   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-2 '>
                <h1 className='text-sm  font-bold text-gray-700'>UserName:{userName}</h1>
 
             <div className='bg-gradient-white  mx-auto py-12 md:px-14 px-8 rounded-lg'>
