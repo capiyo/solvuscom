@@ -22,9 +22,9 @@ export default function LabTabs() {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList    sx={{background:green[300], borderBottomLeftRadius:"20px",width:'100%',justifyContent:"center" ,borderBottomRightRadius:"20px"}}    onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Update" value="2" />
-            <Tab  label="Info" value="1" />
-            <Tab label="History" value="3" />
+            <Tab sx={{ textTransform: 'none' }} label="Update" value="2" />
+            <Tab  sx={{ textTransform: 'none' }} label="Info" value="1" />
+            <Tab sx={{ textTransform: 'none' }} label="History" value="3" />
 
    
           </TabList>
