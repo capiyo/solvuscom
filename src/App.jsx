@@ -19,55 +19,58 @@ import { AssignRecruiter } from './Pages/Coordinator/AssignRecruiter';
 //import { Footer } from './components/Footer';
 import {AllPostedJobs} from './components/AllPostedJobs'
 //import { Dashboard } from './Pages/Dashboard';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './components/ContextProvider/Context';
 //import { UpdateJob } from './Pages/Employer/UpdateJob';
 import { MyJobs } from './Pages/Candidate/MyJobs';
 import { FeaturedJobs } from './components/Home/FeaturedJobs';
 import {Details} from "./Pages/Candidate/Details";
 import {Update} from "./Pages/Candidate/Update";
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
-
+ // const[loggedIn,setLoggedIn]=useState(false)
+ const  loggedIn =useSelector((state)=>state.auth)
  // const {loginData, setLoginData} = useContext(LoginContext)
 
+ console.log(loggedIn)
   
 
   return (
     <div className="App w-full  overflow-hidden">
+      {loggedIn?
+      
       <Routes>
-          {/* <h1 className='text-5xl text-green-600 '>Hello</h1> */}
+          
+       
           <Route path='/' element={<Navbar />}> 
+
+
            <Route path='/' element={<Home />}/>
             <Route path='*' element={<Home />}/>
+            
+            
+            
+
+            
            
             <Route path='/post-job' element={<PostJob />}/>
             <Route path='/all-jobs' element={<FeaturedJobs />}/>
-            <Route path='/login' element={<Login />}/>
+            
+            </Route>
+            
+          
+
+
+            
+      </Routes>
+      :
+      <Routes>
+        <Route path='/' element={<Login />}/>
             <Route path='/signup' element={<Register />}/>
 
 
-            {/* <Route path='/job-detail' element={<JobDetails />}/> */}
-            <Route path='/current-job/:id' element={<JobDetails />}/>
-            <Route path='/application-form/:id' element={<ApplicationForm />}/>
-          
-            <Route path='/shortlist' element={<ShortlistedCandidates />}/>
-            <Route path='/shortlist/details/:candidate_id/:job_id' element={<ShortlistedDetails />}/>
-            <Route path='/assign-recruiter/:id' element={<AssignRecruiter />}/>
-
-            <Route path='/recruiter/review' element={<RecruiterDashboard />}/>
-            {/* <Route path='/recruiter/review' element={<RecruiterDashboard />}/> */}
-            <Route path='/coordinator/review' element={<CoordinatorDashboard />}/>
-            <Route path='/dash' element={<FeaturedJobs />}/>
-            <Route path='/all-posted-jobs' element={<FeaturedJobs/>}/>
-    
-            <Route path='/my-jobs/' element={<MyJobs />}/>
-            <Route path="/" element={<Details/>} />
-            <Route path="/page2" element={<Update />} />
-              
-          </Route>
-          
-      </Routes>
+        </Routes>}
 
     
     </div>

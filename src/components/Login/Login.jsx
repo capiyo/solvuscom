@@ -5,10 +5,12 @@ import { useForm } from "react-hook-form"
 import { ToastContainer, toast } from 'react-toastify';
 import { LoginContext } from '../ContextProvider/Context';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Login = () => {
 
     const { loginData, setLoginData } = useContext(LoginContext);
+    const dispatch=useDispatch()
     const navigate = useNavigate();
     const {
         register,
@@ -33,6 +35,7 @@ export const Login = () => {
 
                     setLoginData(result.token)
                     toast.success("Login successful")
+                    dispatch({type:"auth",payload:"true"})
                     navigate('/'); 
                 }
                 else
