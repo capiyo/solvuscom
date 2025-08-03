@@ -72,9 +72,9 @@ const loadLikes=(jobId)=>{
     
 
     return (
-     <div className=' w-screen flex-col absolute bottom-10 h-[600px] overflow-y-auto bg-green-300'>
-            <h1 className='text-center text-xl  h-[20px]   md:text-2xl  text-primary mt-2 md:mt-6   '>Pending Gigs</h1>
-            <div className='grid sm:grid-cols-1 md:grid-cols-1   container mt-2 mx-auto xl:px-24 px-4 bg-white  rounded-xl '>
+     <div className=' w-screen flex-col absolute bottom-10 h-[700px] overflow-y-auto bg-green-300'>
+            <h1 className='text-center text-xl     md:text-2xl  text-primary  '>Pending Gigs</h1>
+            <div className='grid sm:grid-cols-1 md:grid-cols-1   container  xl:px-24 px-4 bg-white  rounded-xl '>
          {jobs.map((job, key) => <Card    key={key} job={job} />)}
             </div>
         </div>

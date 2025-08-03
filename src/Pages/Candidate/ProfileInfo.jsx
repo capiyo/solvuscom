@@ -135,13 +135,13 @@ export const ProfileInfo = () => {
                             {/* ADDITIONALS */}
                             <div className='flex flex-col'>
                                 <div className='  py-4 md:py-5 text-center'>
-                                    <h2 className=' md:text-md  text-gray-700'>Primary Skill:</h2><p className='text-sm md:text-lg font-bold'>{pSkill}</p>
+                                    <h2 className=' md:text-md  text-blue-700'>Primary Skill:</h2><p className='text-sm md:text-lg'>{pSkill}</p>
                                 </div>
                                 <div className='flex '>
-                                    <h2 className=' text-gray-700'>Other Skills</h2><p className='text-sm md:text-lg font-bold'>{skills}</p>
+                                    <h2 className=' text-blue-700'>Other Skills</h2><p className='text-sm md:text-lg '>{skills}</p>
                                 </div>
                                 <div className='py-4 md:py-5 text-center'>
-                                    <h2 className='text-gray-700'>Location</h2><p className='text-sm md:text-lg font-bold'>{location}</p>
+                                    <h2 className='text-blue-700'>Location</h2><p className='text-sm md:text-lg'>{location}</p>
                                 </div>
                                 </div>
                               
@@ -149,13 +149,13 @@ export const ProfileInfo = () => {
 
                             {/* JOB DESCRIPTION */}
                             <div className='px-1 flex flex-col'>
-                                <h2 className=' text-gray-700'>Education Level</h2><p className='text-sm md:text-lg font-bold'>{education}</p>
+                                <h2 className=' text-blue-700'>Education Level</h2><p className='text-sm md:text-lg'>{education}</p>
                                     
-                                <h2 className=' text-gray-700'>hourly charge rate</h2><p className='text-sm md:text-lg font-bold'>{wage}</p>
+                                <h2 className=' text-blue-700'>hourly charge rate</h2><p className='text-sm md:text-lg'>{wage}</p>
                                  <div className='  py-4 md:py-5 text-center'>
-                                    <h2 className='text-xs md:text-md font-semibold text-gray-700'>Location</h2><p className='text-sm md:text-lg font-bold'>{location}</p>
+                                    <h2 className='text-xs md:text-md font-semibold text-blue-700'>Location</h2><p className='text-sm md:text-lg'>{location}</p>
                                 </div>
-                                <h2 className='my-2 font-bold'> About Me</h2>
+                                <h2 className='my-2  text-blue-700 font-bold'> About Me</h2>
 
                                 
                                 <p className='text-sm md:text-base text-justify '>

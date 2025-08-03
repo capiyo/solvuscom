@@ -131,7 +131,7 @@ export const Update = () => {
 
 
     return (
-        <div className='w-[400px]   h-[500px] overflow-y-auto  container   xl:px-24 px-2 '>
+        <div className=' h-[500px] overflow-y-auto  container   xl:px-24 px-2 '>
             <div className=' py-6 px-4 lg:px-16 rounded-xl'>
 
                 {/* FORM */}
