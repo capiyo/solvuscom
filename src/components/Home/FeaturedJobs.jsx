@@ -110,9 +110,9 @@ useEffect(() => {
         const user = JSON.parse(token);
         setLoginData(user)  
         //console.log(user.userId)
-        setMyId(user.userId)
-        setMyname(user.userName)
-        setWorkerEmail(user.userEmail)
+       // setMyId(user.userId)
+       // setMyname(user.userName)
+       // setWorkerEmail(user.userEmail)
 
       
        // console.log(LoginContext["userId"])

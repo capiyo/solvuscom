@@ -59,6 +59,7 @@ export const Navbar = () => {
     const [navItems, setNavItems] = useState([
         { label: 'Home', path: '/' },
         { label: 'All Jobs', path: '/all-posted-jobs' },
+        
     ]
     );
 
@@ -80,11 +81,12 @@ export const Navbar = () => {
 
 
     useEffect(() => {
+        setNavItems(employerNavItems)
         
             //const { loginData, setLoginData } = useContext(LoginContext);
         
 
-        if (loginData) {
+       /* if (loginData) {
             const role = loginData.role;
             const  bossId=loginData.userId 
             
@@ -105,8 +107,18 @@ export const Navbar = () => {
                 setNavItems(candidateNavItems)
                 console.log(loginData +"Hellllloooo capiyo thhe")
             }
+            else{
+                  setNavItems(employerNavItems)
+
+            }
+            
+
+            
+
         }
+            */
     }, [loginData])
+    
 
 
     const logoutHandler = async () => {
@@ -213,7 +225,7 @@ export const Navbar = () => {
                             </div>
                             :
                             <div className='text-base text-primary font-medium space-x-5 hidden md:block'>
-                                <Register/>
+                                
                                 <Link to="/login" className='py-2 px-5 border rounded bg-gray-100'>Login</Link>
                                 <Link to="/signup" className=   'bg-green-500 text-white py-2 px-5 border rounded'>Sign Up</Link>
                             </div>

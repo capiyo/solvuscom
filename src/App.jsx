@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App w-full  overflow-hidden">
-      {loggedIn?
+    
       
       <Routes>
           
@@ -64,13 +64,13 @@ function App() {
 
             
       </Routes>
-      :
+      
       <Routes>
-        <Route path='/' element={<Login />}/>
+        <Route path='/login' element={<Login />}/>
             <Route path='/signup' element={<Register />}/>
 
 
-        </Routes>}
+        </Routes>
 
     
     </div>
