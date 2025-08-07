@@ -16,17 +16,21 @@ import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarLeftExpand } from "react-ic
 import {FaHeart}  from "react-icons/fa"
 import { LogOut } from 'lucide-react';
 import { toast } from 'react-toastify';
-import {useDispatch} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 import {Profile} from "./Home/profile.jsx";
 import Account from "../Pages/Candidate/Account.jsx";
 import {Footer} from "./Footer.jsx";
 import {Login} from "./Login/Login.jsx"
 import SwipeableViews from "react-swipeable-views";
 import { Register } from './Login/Register.jsx';
+import LabTabs from '../Pages/Candidate/General.js';
+import { Pending } from './Home/Pending.jsx';
+import { Chats } from './Home/Chats.jsx';
+//import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
     { label: 'Home', path: '/' },
-      { label: 'Pending', path: '/' },
+      { label: 'Pending', path: '/pending' },
      { label: 'about us', path: '/post-job' }, 
 
       
@@ -136,12 +140,14 @@ export const Navbar = () => {
             })
     }
 
-    const overlayHandler=(capiyo)=>{
-        setOverlay("profile")
+    const overlayHandler=(overlay)=>{    
+        setOverlay(overlay)
+        console.log(overlay)
         setHeight("h-screen")
 
     }
    
+    
 
      
 
@@ -190,12 +196,16 @@ export const Navbar = () => {
                     </ul>
                 }
                 
+                <div   onClick={()=>overlayHandler("Pending")}       className='flex hidden md:flex text-green-500 font-bold  cursor-pointer'>
+                    <FaBrain/>
+                                            Pending</div>
            <div className='flex  hidden  md:flex'>
+            
             <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
 
-                <div  onClick={logoutHandler} className='flex flex col  hidden  md:flex lg:flex cursor-pointer  hover:text-red-900'>Log out</div>
+                <div  onClick={logoutHandler} className='flex flex col   md:flex lg:flex cursor-pointer  hover:text-red-900'>@Capiyo</div>
 
                 <div>
 
@@ -271,7 +281,11 @@ export const Navbar = () => {
                     </div>
                 </ul>
             </div>
+              {overlay==="Pending"?
+          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Chats/></div>:""
+          }
           <div        className=' flex absolute  bottom-10 h-16   lg:hidden '> <Footer/></div>
+        
 
 
             <Outlet />

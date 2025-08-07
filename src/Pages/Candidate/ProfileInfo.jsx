@@ -113,17 +113,17 @@ export const ProfileInfo = () => {
 
 
     return(
-          <div className='w-full   h-[600px] overflow-y-auto  container mt-2 mx-auto xl:px-24 px-2 '>
+          <div className='w-full   h-[600px] overflow-y-auto  items-start  container mt-2 mx-auto  px-2 '>
                <h1 className='text-sm  font-bold text-gray-700'>UserName:{userName}</h1>
 
-            <div className='bg-gradient-white  mx-auto py-12 md:px-14 px-8 rounded-lg'>
+            <div className='bg-gradient-white  mx-auto py-12  px-8 rounded-lg'>
 
                 <div className='flex flex-col lg:flex-row  gap-8'></div>
             
                 <div className='w-full'>
 
                             {/* BASIC DETAILS */}
-                            <div className='max-sm:hidden flex items-center flex-wrap justify-center md:justify-normal'>
+                            <div className='max-sm:hidden flex  flex-wrap justify-center md:justify-normal'>
                                 <img src={LogoURL} alt="Logo" className="rounded-full w-20 md:w-24 h-auto" />
                                 <div className='mx-4 my-3 text-center md:text-left md:my-0'>
                                     <h1 className='text-xl md:text-2xl font-bold'>Education:{education}</h1>

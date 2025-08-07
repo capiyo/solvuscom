@@ -306,20 +306,20 @@ const showRequest=(jobId)=>{
                        
                         <box-icon size='14px' name='time'></box-icon>
                         <div className='flex flex-col'>
-                        <span className='pl-1 sm:text-[10px] '>Budget: Ksh.{job.budget} </span>
-                        <span className='pl-1 sm:text-[5px] '>Deadline: {job.deadline} </span>
-                        <span className='pl-1 sm:text-[5px] '>Time: {job.timePosted} </span>
+                        <span className='pl-1 sm:text-[10px]  lg:text-base '>Budget: Ksh.{job.budget} </span>
+                        <span className='pl-1 sm:text-[5px]   lg:text-base '>Deadline: {job.deadline} </span>
+                        <span className='pl-1 sm:text-[5px]  lg:text-base '>Time: {job.timePosted} </span>
 
                         
                         </div>
 
                     </div>
-                    <h1 className=' sm:text-[12px]   text-md text-blue-500'>{job.jobTitle}</h1>
+                    <h1 className=' sm:text-[12px]   lg:text-base   text-md text-blue-500'>{job.jobTitle}</h1>
                 </div>
             </div>
             <div className='flex flex-col'>
                 <FaBrain/>
-                <p className='py-4  lg:text-lg    sm:text-sm/8'>{job.description}</p>
+                <p className='py-4  lg:text-base   sm:text-sm/8'>{job.description}</p>
             </div>
             {/* Footer - apply now and location */}            
             <div className={`flex justify-between flex-row ` }> 
@@ -328,16 +328,16 @@ const showRequest=(jobId)=>{
                     <div      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
                                  onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
                      text-white text-sm    mt-10 `}>
-                        <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold'><FaEye/>view </div>
+                        <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base '><FaEye/>view </div>
                         </div>
                         
                 </Link>
                 : <div>
                
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
-                     text-white text-sm py-1 px-4 mt-10   `}>
+                     text-white text-sm py-1 px-4 mt-10   lg:text-base   `}>
 
-                           <div    className='sm:text-[5px] flex flex-row  text-violet-900 '><FaRedRiver/>follow</div>
+                           <div    className='sm:text-[5px] flex flex-row  text-violet-900  lg:text-base  '><FaRedRiver/>follow</div>
                       
                         </div>
                 </div>}
@@ -351,7 +351,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm    mt-10`}>
 
-                           <div    className='flex flex-row  text-green-500  sm:text-[10px] '><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-green-500   lg:text-base   sm:text-[10px] '><FaMale/>@{job.posterName}</div>
                       
                         </div>
                 </div>
@@ -359,7 +359,7 @@ const showRequest=(jobId)=>{
                  <div >
                     <div onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
                      text-white text-sm py-1 px-4  mt-10   `}>
-                        <div    className='flex flex-row text-blue-500  sm:text-[9px] '><FaHandHolding/>Request</div> </div>
+                        <div    className='flex flex-row text-blue-500   lg:text-base   sm:text-[9px] '><FaHandHolding/>Request</div> </div>
                         
                 </div> 
                   
@@ -367,7 +367,7 @@ const showRequest=(jobId)=>{
                 </div>
                
                  <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px] '>#36</span> <FaHeart/>   
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px]   lg:text-base '>#36</span> <FaHeart/>   
                            
                          
                         </span>

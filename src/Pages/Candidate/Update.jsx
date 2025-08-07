@@ -131,7 +131,7 @@ export const Update = () => {
 
 
     return (
-        <div className=' h-[500px] overflow-y-auto  container   xl:px-24 px-2 '>
+        <div className=' h-[600px] overflow-y-auto  container  w-[400px]  items-start px-2 '>
             <div className=' py-6 px-4 lg:px-16 rounded-xl'>
 
                 {/* FORM */}
@@ -139,7 +139,7 @@ export const Update = () => {
                     <div className='flex flex-col lg:flex-row  gap-8'>
 
                         {/* JOB POSTING DETAILS */}
-                        <div className='lg:w-1/2 w-full'>
+                        <div className='w-full'>
                             <div><h1 className='text-xl font-bold text-center  text-black'>Update your profile </h1></div>
                             <div>
                                 <label className='block m-1 text-md text-black'>Username</label>

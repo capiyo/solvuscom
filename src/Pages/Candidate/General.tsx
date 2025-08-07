@@ -20,7 +20,7 @@ export default function LabTabs() {
 
   return (
     <Box sx={{ background:"#86EFAC",position:"absolute",bottom:50, marginLeft:"20px",marginRight:"20px" 
-     ,height:"700px",width: '90%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
+     ,height:"700px",width: '70%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList    sx={{background:"#86EFAC", borderTopLeftRadius:"20px",width:'100%',display:"flex",justifyContent: "space-evenly"

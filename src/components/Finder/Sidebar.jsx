@@ -26,8 +26,11 @@ const Sidebar = () => {
   };
 
   const Menus = [
-    { title: "Accounting", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
-    { title: "software", icon: <BiChat />, gap: true, subMenu: ["Requested Messages", "Unread Messages", "All Messages"], key: "inbox" },
+
+    
+    { title: "My Account", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
+    { title: "Chats", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
+    { title: "Pending", icon: <BiChat />, gap: true, subMenu: ["Requested Messages", "Unread Messages", "All Messages"], key: "inbox" },
     { title: "Mathematics", icon: <TiCalendar /> },
     { title: "Data science", icon: <FiTable /> },
     { title: "Engineering", icon: <GoGraph /> },

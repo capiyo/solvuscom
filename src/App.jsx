@@ -27,7 +27,7 @@ import { FeaturedJobs } from './components/Home/FeaturedJobs';
 import {Details} from "./Pages/Candidate/Details";
 import {Update} from "./Pages/Candidate/Update";
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Pending } from './components/Home/Pending';
 function App() {
  // const[loggedIn,setLoggedIn]=useState(false)
  const  loggedIn =useSelector((state)=>state.auth)
@@ -48,6 +48,7 @@ function App() {
 
            <Route path='/' element={<Home />}/>
             <Route path='*' element={<Home />}/>
+            
             
             
             

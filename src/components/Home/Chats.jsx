@@ -39,9 +39,9 @@ export const Chats = () => {
     
 
     return (
-        <div className=' w-screen flex-col absolute bottom-10 h-[600px] overflow-y-auto bg-green-300'>
+        <div className=' w-[400px] flex-col absolute bottom-10 h-[700px] overflow-y-auto bg-green-300'>
             <h1 className='text-center text-xl     md:text-2xl font-bold text-primary mt-8 md:mt-6   '>Chat Histoy</h1>
-            <div className='grid sm:grid-cols-1 md:grid-cols-1   container mt-2 mx-auto xl:px-24 px-4 bg-white  rounded-xl '>
+            <div className='grid sm:grid-cols-1 md:grid-cols-1   container mt-2 mx-auto  px-4 bg-white  rounded-xl '>
                 {applicants.map((people, key) => <Card key={key}  applicants={people} />)}
             </div>
         </div>
