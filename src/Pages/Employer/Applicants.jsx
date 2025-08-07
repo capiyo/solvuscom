@@ -40,7 +40,7 @@ export const Applicants = ({title}) => {
 
     return (
         <div className=''>
-            <h1 className='text-center text-xl md:text-2xl font-bold text-primary mt-8 md:mt-6   '>All Aplicants</h1>
+            <h1 className='text-center text-xl md:text-2xl font-bold text-primary    '>All Aplicants</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-1'>
                 {applicants.map((people, key) => <Card key={key}  applicants={people}  title={title}/>)}
             </div>
@@ -194,7 +194,7 @@ console.log(paymentData)
     return (
 
 
-        <div className='border shadow-lg hover:border-green-800       lg:w-[700px]   rounded-xl flex-row  bg-green-100 card'>
+        <div className='border shadow-lg hover:border-green-800       lg:w-[500px]   rounded-xl flex-row  bg-green-100 card'>
           
         
             

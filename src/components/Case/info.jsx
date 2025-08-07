@@ -99,7 +99,7 @@ export const Info = () => {
     return(
           <div className='lg:w-[700px]  container mt-2 mx-auto xl:px-2 px-4 '>
 
-            <div className='bg-gradient-to-b from-white to-green-500 mx-auto py-12 md:px-14 px-8 rounded-lg'>
+            <div className=' mx-auto py-12 md:px-14 px-8 rounded-lg'>
 
                 <div className='flex flex-col lg:flex-row  gap-8'></div>
                 {job?<div className='w-full'>

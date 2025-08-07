@@ -29,13 +29,13 @@ export const JobDetails = () => {
 
           :
           <div>
-    <div className='overflow-auto  border-r-4 border-indigo-500  ' ><Worker/></div>
+    <div className='overflow-auto  border-r-4 sm:w-screen lg:w-[600px] border-indigo-500  ' ><Worker/></div>
 
           </div>
           }
         </div>
 
-        <div  className='overflow-y-auto  items-center h-screen lg:flex  h-screen hidden'><Applicants/></div>
+        <div  className='overflow-y-auto  items-center h-screen lg:flex   w-[500px] hidden'><Applicants/></div>
   
     </div>
   )

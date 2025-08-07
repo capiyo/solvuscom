@@ -108,11 +108,15 @@ function Card({ job}) {
 useEffect(() => {
            let token = localStorage.getItem("user");
         const user = JSON.parse(token);
-        setLoginData(user)  
+        //setLoginData(user)  
         //console.log(user.userId)
-       setMyId(user.userId)
+        if(user){
+             setMyId(user.userId)
         setMyname(user.userName)
        setWorkerEmail(user.userEmail)
+
+        }
+      
 
       
        // console.log(LoginContext["userId"])

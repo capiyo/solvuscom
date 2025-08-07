@@ -26,6 +26,7 @@ import { Register } from './Login/Register.jsx';
 import LabTabs from '../Pages/Candidate/General.js';
 import { Pending } from './Home/Pending.jsx';
 import { Chats } from './Home/Chats.jsx';
+import { PostJob } from '../Pages/Employer/PostJob.jsx';
 //import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
@@ -59,6 +60,7 @@ const candidateNavItems = [
 export const Navbar = () => {
 
     const [loginData, setLoginData] = useState();
+     const myOverlay=useSelector((state)=>state.overlay)
 
     const [navItems, setNavItems] = useState([
         { label: 'Home', path: '/' },
@@ -66,10 +68,36 @@ export const Navbar = () => {
         
     ]
     );
+    const renderOverLay=()=>{
+        if(myOverlay==="Pending"){
+               return(
+              <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Pending/></div>
+        )
+
+
+        }
+        else if(myOverlay==="Chats"){
+               return(
+          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Chats/></div>
+        )
+
+        
+        }
+         else if(myOverlay==="Mathematics"){
+               return(
+          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Pending/></div>
+        )
+
+        
+        }
+     
+        
+
+    }
 
     const dispatch=useDispatch();
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const handlerIsMenuOpen = () => setIsMenuOpen(!isMenuOpen);
     const[navBg,setnavBg]=useState('bg-gradient-to-r from-white to-pink-700')
     const[overlay,setOverlay]=useState("")
@@ -284,8 +312,11 @@ export const Navbar = () => {
                     </div>
                 </ul>
             </div>
-              {overlay==="Pending"?
-          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Chats/></div>:""
+                      
+
+
+              {myOverlay !==""? renderOverLay()
+        :""
           }
           <div        className=' flex absolute  bottom-20 h-16   lg:hidden '> <Footer/></div>
         

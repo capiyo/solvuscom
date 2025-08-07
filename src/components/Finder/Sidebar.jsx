@@ -7,9 +7,13 @@ import { MdOutlineHeadsetMic, MdSpaceDashboard } from "react-icons/md";
 import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarLeftExpand } from "react-icons/tb";
 import { useState } from "react";
 import { TiCalendar } from "react-icons/ti";
+import { useDispatch,useSelector } from "react-redux";
+
+
 
 
 const Sidebar = () => {
+  const dispatch=useDispatch()
 
   const [open, setOpen] = useState(true);
   const [subMenus, setSubMenus] = useState({
@@ -25,24 +29,33 @@ const Sidebar = () => {
     }));
   };
 
+  const changeOverlay=(overlay)=>{
+    dispatch({type:"overlay",payload:overlay})
+
+
+    console.log(overlay)
+
+
+  }
+
   const Menus = [
 
     
     { title: "My Account", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
     { title: "Chats", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
-    { title: "Pending", icon: <BiChat />, gap: true, subMenu: ["Requested Messages", "Unread Messages", "All Messages"], key: "inbox" },
+    { title: "Pending", icon: <BiChat />},
     { title: "Mathematics", icon: <TiCalendar /> },
     { title: "Data science", icon: <FiTable /> },
     { title: "Engineering", icon: <GoGraph /> },
     { title: "Writing", icon: <div className="text-green"><MdOutlineHeadsetMic /> </div>},
-    { title: "Escrow", icon: <FaGears />, subMenu: ["General", "Security", "Notifications"], key: "settings" },
+    { title: "Escrow", icon: <FaGears /> },
      { title: "Dashboard", icon: <MdSpaceDashboard /> },
-    { title: "Inbox", icon: <BiChat />, gap: true, subMenu: ["Requested Messages", "Unread Messages", "All Messages"], key: "inbox" },
+    { title: "Inbox", icon: <BiChat /> },
     { title: "Calendar", icon: <TiCalendar /> },
     { title: "Tables", icon: <FiTable /> },
     { title: "Analytics", icon: <GoGraph /> },
     { title: "Support", icon: <MdOutlineHeadsetMic /> },
-    { title: "Setting", icon: <FaGears />, subMenu: ["General", "Security", "Notifications"], key: "settings" },
+    { title: "Setting", icon: <FaGears /> },
     { title: "Account", icon: <GoGraph /> },
     
   ];
@@ -51,10 +64,10 @@ const Sidebar = () => {
     
     <div className="flex  h-[1000px]    sticky max-sm:hidden ">
       {/* Sidebar section */}
-      <div className={`${open ? "w-50 p-1" : "w-20 p-1"} rounded-xl  sticky  bg-green-500  pt-8 relative duration-300 ease-in-out`}>
+      <div className={`${open ? "w-50 p-1" : "w-20 p-1"} rounded-xl    bg-green-500  pt-8 relative duration-300 ease-in-out`}>
         {/* Toggle button sections */}
         <div className={`absolute cursor-pointer -right-4 top-9 w-8 h-8 p-0.5 bg-green border-zinc-50 border-2 rounded-full text-xl flex  ${!open && "rotate-180"} transition-all ease-in-out duration-300`}
-          onClick={() => setOpen(!open)}
+          onClick={() =>console.log("Love")}
         >
           {open ?
             <TbLayoutSidebarLeftExpand /> :
@@ -79,7 +92,7 @@ const Sidebar = () => {
                   <span className="text-lg">
                     {Menu.icon}
                   </span>
-                  <span className={`${!open && "hidden"} origin-left ease-in-out duration-300`}>
+                  <span    onClick={()=>changeOverlay(Menu.title)} className={`${!open && "hidden"} origin-left ease-in-out duration-300`}>
                     {Menu.title}
                   </span>
                 </div>
