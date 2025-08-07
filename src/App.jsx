@@ -48,6 +48,9 @@ function App() {
 
            <Route path='/' element={<Home />}/>
             <Route path='*' element={<Home />}/>
+              <Route path='/login' element={<Login />}/>
+            <Route path='/signup' element={<Register />}/>
+
             
             
             
@@ -67,9 +70,7 @@ function App() {
       </Routes>
       
       <Routes>
-        <Route path='/login' element={<Login />}/>
-            <Route path='/signup' element={<Register />}/>
-
+      
 
         </Routes>
 

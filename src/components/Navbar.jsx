@@ -204,8 +204,11 @@ export const Navbar = () => {
             <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
-
-                <div  onClick={logoutHandler} className='flex flex col   md:flex lg:flex cursor-pointer  hover:text-red-900'>@Capiyo</div>
+                 {localStorage.getItem("usertoken")?
+                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div>:
+                                    <Link to="/login" className='py-2 px-5 border rounded bg-gray-100 sm:flex'>Login</Link>
+                                    
+                                 }
 
                 <div>
 
@@ -236,7 +239,7 @@ export const Navbar = () => {
                             :
                             <div className='text-base text-primary font-medium space-x-5 hidden md:block'>
                                 
-                                <Link to="/login" className='py-2 px-5 border rounded bg-gray-100'>Login</Link>
+                                <Link to="/login" className='py-2 px-5 border rounded bg-gray-100 sm:flex'>Login</Link>
                                 <Link to="/signup" className=   'bg-green-500 text-white py-2 px-5 border rounded'>Sign Up</Link>
                             </div>
                     }
@@ -284,7 +287,7 @@ export const Navbar = () => {
               {overlay==="Pending"?
           <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Chats/></div>:""
           }
-          <div        className=' flex absolute  bottom-10 h-16   lg:hidden '> <Footer/></div>
+          <div        className=' flex absolute  bottom-20 h-16   lg:hidden '> <Footer/></div>
         
 
 

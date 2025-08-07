@@ -131,7 +131,7 @@ export const Update = () => {
 
 
     return (
-        <div className=' h-[600px] overflow-y-auto  container  w-[400px]  items-start px-2 '>
+        <div className=' h-[600px] overflow-y-auto  container    items-start px-2 '>
             <div className=' py-6 px-4 lg:px-16 rounded-xl'>
 
                 {/* FORM */}
@@ -140,9 +140,9 @@ export const Update = () => {
 
                         {/* JOB POSTING DETAILS */}
                         <div className='w-full'>
-                            <div><h1 className='text-xl font-bold text-center  text-black'>Update your profile </h1></div>
+                        
                             <div>
-                                <label className='block m-1 text-md text-black'>Username</label>
+                                <label className='block m-1 lg:text-base   sm:text-sm/8 text-blue-600'>Username</label>
                                 <input type='text' required {...register("userName")}
                                        placeholder='Tesla'
                                        className=' border-b-2 border-green-500 create-job-input placeholder:text-xs md:placeholder:text-sm  rounded-xl'>
@@ -150,7 +150,7 @@ export const Update = () => {
                                 </input>
                             </div>
                             <div>
-                                <label className='block m-1 text-md text-black'>Education Level </label>
+                                <label className='block m-1 lg:text-base   sm:text-sm/8 text-blue-600'>Education Level </label>
                                 <input type='text' required {...register("education")} placeholder='Bachelor in Computer Science'
                                        className='border-b-2 border-green-500 create-job-input placeholder:text-xs md:placeholder:text-sm  rounded-xl'>
 
@@ -158,7 +158,7 @@ export const Update = () => {
                             </div>
 
                             <div>
-                                <label className='block m-1 text-md text-black'>Major Skill</label>
+                                <label className='block m-1  lg:text-base   sm:text-sm/8 text-blue-600'>Major Skill</label>
                                 <input type='text' required {...register("pSkill")} placeholder='Ethical hacking'
                                        className='border-b-2 border-green-500 create-job-input placeholder:text-xs md:placeholder:text-sm  rounded-xl'>
 
@@ -168,7 +168,7 @@ export const Update = () => {
 
 
                             <div>
-                                <label className='block m-1 text-md text-black'>Hourly wage rate</label>
+                                <label className='block m-1  lg:text-base   sm:text-sm/8 text-blue-600'>Hourly wage rate</label>
                                 <input type='number' required {...register("wage")}
                                        placeholder='Ksh. 500'
                                        className=' border-b-2 border-green-500 create-job-input placeholder:text-xs md:placeholder:text-sm rounded-xl'>
@@ -176,7 +176,7 @@ export const Update = () => {
                                 </input>
                             </div>
                             <div>
-                                <label className='block m-1 text-md text-black'>Location</label>
+                                <label className='block m-1 text-md text-blue-600'>Location</label>
                                 <input type='text' required {...register("location")}
                                        placeholder='Kisumu'
                                        className=' border-b-2 border-green-500 create-job-input placeholder:text-xs md:placeholder:text-sm rounded-xl border-b-2 border-green-500'>
@@ -184,7 +184,7 @@ export const Update = () => {
                                 </input>
                             </div>
                             <div>
-                                <label className='block m-1 text-md text-black'>List your Skills</label>
+                                <label className='block m-1 text-md text-blue-600'>List your Skills</label>
                                 <textarea className='create-job-input placeholder:text-xs md:placeholder:text-sm rounded-xl border-b-2 border-green-500' rows={4}
                                           placeholder='Software engineer, Electrical engineer...' required {...register("skills")} />
 
@@ -197,7 +197,7 @@ export const Update = () => {
 
 
                             <div>
-                                <label className='block m-1 text-md text-black'>Description</label>
+                                <label className='block m-1 text-md text-blue-600'>Description</label>
                                 <textarea className='create-job-input placeholder:text-xs md:placeholder:text-sm rounded-xl border-b-2 border-green-500' rows={4}
                                           placeholder='Describe yourself' required {...register("description")} />
                             </div>

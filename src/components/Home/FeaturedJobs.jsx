@@ -74,7 +74,7 @@ const loadLikes=(jobId)=>{
     return (
         <div className=''>
             
-                           <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary mt-2 md:mt-2 sm:mt-1'>
+                           <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary'>
                             Our Featured Jobs,<span className='text-blue-600'>
                             quality and trust</span></h1></div>
                            
@@ -110,9 +110,9 @@ useEffect(() => {
         const user = JSON.parse(token);
         setLoginData(user)  
         //console.log(user.userId)
-       // setMyId(user.userId)
-       // setMyname(user.userName)
-       // setWorkerEmail(user.userEmail)
+       setMyId(user.userId)
+        setMyname(user.userName)
+       setWorkerEmail(user.userEmail)
 
       
        // console.log(LoginContext["userId"])
