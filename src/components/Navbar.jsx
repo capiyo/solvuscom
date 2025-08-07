@@ -206,7 +206,7 @@ export const Navbar = () => {
                 </div>
                  {localStorage.getItem("usertoken")?
                                  <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div>:
-                                    <Link to="/login" className='py-2 px-5 border rounded bg-gray-100 sm:flex'>Login</Link>
+                                    <Link to="/login" className='sm:flex'>Login</Link>
                                     
                                  }
 
