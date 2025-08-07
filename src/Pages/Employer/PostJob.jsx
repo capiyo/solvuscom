@@ -28,9 +28,11 @@ export const PostJob = () => {
         const user = JSON.parse(token);
        // setLoginData(user)  
         //console.log(user.userId)
+        if(user){
         setBossId(user.userId)
         setPosterName(user.userName)
         setBossPhone(user.phoneNumber)
+        }
 
       
        // console.log(LoginContext["userId"])
@@ -131,15 +133,15 @@ export const PostJob = () => {
 
 
     return (
-        <div className='h-[600px] overflow-y-auto mx-auto   container   w-[300px] bg-green-300  absolute bottom-10 rounded-xl  '>
-            <div className='lg:px-16  px-2 rounded-xl'>
+        <div className='h-[700px] overflow-y-auto mx-auto   container  sm:w-300  lg:w-[400px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
+            <div className='rounded-xl'>
 
                 {/* FORM */}
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <div className='flex flex-col lg:flex-row  gap-8'>
 
                         {/* JOB POSTING DETAILS */}
-                        <div className='lg:w-1/2 w-full'>
+                        <div className=' w-full'>
                             <div><h1 className='text-xl font-bold text-center text-green-500'>Job Details</h1></div>
                             <div>
                                 <label className='block m-1 text-md text-green-500'>Title</label>

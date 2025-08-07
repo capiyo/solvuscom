@@ -128,11 +128,13 @@ function Card({ applicants }) {
 
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
+        if(user){
         setMyId(user.userId)
         setPostername(user.userName)
         setPosterEMail(user.userEmail)
           setBossPhone(user.phoneNumber)
         setLoginData(user)
+        }
 
         console.log(myId,posterEmail,posterName,bossPhone)
     }, [myId])

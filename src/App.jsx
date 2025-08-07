@@ -58,7 +58,7 @@ function App() {
 
             
            
-            <Route path='/post-job' element={<PostJob />}/>
+            
             <Route path='/all-jobs' element={<FeaturedJobs />}/>
             
             </Route>

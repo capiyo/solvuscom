@@ -87,6 +87,11 @@ export const Navbar = () => {
                return(
           <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Pending/></div>
         )
+    }
+         else if(myOverlay==="addGig"){
+               return(
+          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><PostJob/></div>
+        )
 
         
         }
@@ -171,6 +176,7 @@ export const Navbar = () => {
     const overlayHandler=(overlay)=>{    
         setOverlay(overlay)
         console.log(overlay)
+        dispatch({type:"overlay",payload:"addGig"})
         setHeight("h-screen")
 
     }
@@ -224,9 +230,9 @@ export const Navbar = () => {
                     </ul>
                 }
                 
-                <div   onClick={()=>overlayHandler("Pending")}       className='flex hidden md:flex text-green-500 font-bold  cursor-pointer'>
+                <div   onClick={()=>overlayHandler("addGig")}       className='flex hidden md:flex text-green-500 font-bold  cursor-pointer'>
                     <FaBrain/>
-                                            Pending</div>
+                                            Post Gig</div>
            <div className='flex  hidden  md:flex'>
             
             <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>
@@ -234,7 +240,7 @@ export const Navbar = () => {
                 </div>
                  {localStorage.getItem("usertoken")?
                                  <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div>:
-                                    <Link to="/login" className='sm:flex'>Login</Link>
+                                    <Link to="/login" className='sm:flex   lg:hidden'>Login</Link>
                                     
                                  }
 
@@ -267,8 +273,8 @@ export const Navbar = () => {
                             :
                             <div className='text-base text-primary font-medium space-x-5 hidden md:block'>
                                 
-                                <Link to="/login" className='py-2 px-5 border rounded bg-gray-100 sm:flex'>Login</Link>
-                                <Link to="/signup" className=   'bg-green-500 text-white py-2 px-5 border rounded'>Sign Up</Link>
+                                <Link to="/login" className='py-2 px-5  bg-green-500 border rounded  sm:flex'>Login</Link>
+                        
                             </div>
                     }
                 </div>
