@@ -62,9 +62,14 @@ const loadLikes=(jobId)=>{
         );
 
 } 
+ const dispatch=useDispatch()
+
+      const  closeOverlay=()=>{
+    dispatch({type:"overlay",payload:"close"})
+    
 
 
-
+  }
 
         
        
@@ -72,8 +77,13 @@ const loadLikes=(jobId)=>{
     
 
     return (
-     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]     overflow-y-auto  bg-green-300'>
-            <h1 className='text-center text-xl    md:text-2xl  text-primary  '>Pending Gigs</h1>
+     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  bg-green-300'>
+           <div className='flex flex-row justify-between '>
+            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>Pending gigs</h1>
+               <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>Close</h1>
+
+
+               </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-1   container  px-4 bg-white  rounded-xl '>
          {jobs.map((job, key) => <Card    key={key} job={job} />)}
             </div>
@@ -316,7 +326,7 @@ const showRequest=(jobId)=>{
                     <div      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
                                  onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
                      text-white text-sm    mt-10 `}>
-                        <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold'><FaEye/>view </div>
+                        <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base'><FaEye/>view </div>
                         </div>
                         
                 </Link>
@@ -325,7 +335,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm py-1 px-4 mt-10   `}>
 
-                           <div    className='sm:text-[5px] flex flex-row  text-violet-900 '><FaRedRiver/>follow</div>
+                           <div    className='sm:text-[5px] flex flex-row  text-violet-900  lg:text-base '><FaRedRiver/>follow</div>
                       
                         </div>
                 </div>}
@@ -339,7 +349,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm    mt-10`}>
 
-                           <div    className='flex flex-row  text-green-500  sm:text-[10px] '><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-green-500  sm:text-[10px]  lg:text-base '><FaMale/>@{job.posterName}</div>
                       
                         </div>
                 </div>
@@ -347,7 +357,7 @@ const showRequest=(jobId)=>{
                  <div >
                     <div onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
                      text-white text-sm py-1 px-4  mt-10   `}>
-                        <div    className='flex flex-row text-blue-500  sm:text-[9px] '><FaHandHolding/>Be Admin</div> </div>
+                        <div    className='flex flex-row text-blue-500  sm:text-[9px]   lg:text-base'><FaHandHolding/>Be Admin</div> </div>
                         
                 </div> 
                   
@@ -355,7 +365,7 @@ const showRequest=(jobId)=>{
                 </div>
                
                  <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px] '>#36</span> <FaHeart/>   
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px]   lg:text-base'>#36</span> <FaHeart/>   
                            
                          
                         </span>

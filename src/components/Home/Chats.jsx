@@ -5,6 +5,7 @@ import logoURL from '../../assets/img/laptop.jpeg'
 import { toast } from 'react-toastify';
 import { LoginContext } from '../ContextProvider/Context';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaMessage } from 'react-icons/fa6';
 export const Chats = () => {
 
     const [applicants, setApplicants] = useState([]);
@@ -52,12 +53,18 @@ export const Chats = () => {
 
   }
 
+  const  setChatPage=()=>{
+       dispatch({type:"overlay",payload:"chatpage"})
+
+
+  }
+
     
 
     return (
         <div   className='  cursor-pointer lg:w-[400px]  sm:w-[200px] flex-col absolute bottom-10  h-[700px]  bg-green-300'>
             <div className='flex flex-row justify-between '>
-            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>Chat Histoy</h1>
+            <h1   onClick={setChatPage} className='text-center text-sm flex   flex-row  ml-2  md:text-sm text-red-600 mt-8 md:mt-6   '><FaMessage/> View</h1>
                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>Close</h1>
 
 

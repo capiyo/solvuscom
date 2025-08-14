@@ -28,6 +28,7 @@ import { Pending } from './Home/Pending.jsx';
 import { Chats } from './Home/Chats.jsx';
 import { PostJob } from '../Pages/Employer/PostJob.jsx';
 import General from "../Pages/Candidate/General.js"
+import { WorkerOverlay } from './Case/workeOverlay.jsx';
 //import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
@@ -109,7 +110,12 @@ export const Navbar = () => {
                return(
           <div   className='flex  absolute bottom-0 right-0  w-[600px] z-50'><PostJob/></div>
         )
+    }
         
+        else if(myOverlay==="chatpage"){
+               return(
+          <div   className='flex  absolute bg-slate-400 bottom-0 right-0 z-50'><WorkerOverlay/></div>
+        )
 
         
         }
@@ -287,7 +293,13 @@ export const Navbar = () => {
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
                  {localStorage.getItem("usertoken")?
-                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div>:
+                 <div className=' w-screen flex flex-row justify-between'>
+                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  ml-2 hover:text-red-900'>Logout</div> 
+                                <div className='mr-2'> Notifications</div>
+                                 </div>:
+                                 
+
+
                                     <Link to="/login" className='sm:flex   lg:hidden'>Login</Link>
                                     
                                  }
