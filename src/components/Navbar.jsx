@@ -293,9 +293,10 @@ export const Navbar = () => {
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
                  {localStorage.getItem("usertoken")?
-                 <div>
-                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div> 
-                                 Notification
+                 <div className='flex flex-row w-[400px] justify-between ' >
+                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>logout</div> 
+                                 <div  className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>notifications</div> 
+                                 
                                  </div>:
                                  
 
