@@ -1,7 +1,8 @@
 import React from 'react'
-import { useState,useContext,useEffect } from 'react'
+import { useState,useContext,useEffect,useRef } from 'react'
 import { useForm } from "react-hook-form"
 import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
 import { LoginContext } from '../../components/ContextProvider/Context'
 
 
@@ -14,16 +15,34 @@ export const PostJob = () => {
     const[bossPhone,setBossPhone]=useState()
      let timePosted=new Date().toLocaleTimeString()
     let datePosted=new Date().toLocaleDateString()
+    const dispatch=useDispatch();
 
-    
+
+
+
     
    // const bossId=loginData.userId
 
 
-  
+
 
 
     useEffect(() => {
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
            let token = localStorage.getItem("user");
         const user = JSON.parse(token);
        // setLoginData(user)  
@@ -39,6 +58,10 @@ export const PostJob = () => {
        // console.log(typeof(LoginContext))
         //setBossId(loginData.userId)
        // console.log(bossId+"The capiyo")
+
+
+      
+
     }, [])
 
 
@@ -129,20 +152,44 @@ export const PostJob = () => {
         setQuestions(newQuestions);
         setQuestionSize(questionSize-1);
     };
+    const handleChildClick = () => {
+//    event.stopPropagation(); // Stop propagation here
+    console.log('Child clicked!');
+  };
+
+
+  const  closeOverlay=()=>{
+    dispatch({type:"overlay",payload:"close"})
+    
+
+
+  }
+
 
 
 
     return (
-        <div className='h-[700px] overflow-y-auto mx-auto   container  sm:w-300  lg:w-[400px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
+        <div    onClick={handleChildClick}    className='h-[700px] overflow-y-auto mx-auto        sm:w-[200]  lg:w-[300px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
             <div className='rounded-xl'>
 
                 {/* FORM */}
                 <form onSubmit={handleSubmit(onSubmit)} >
-                    <div className='flex flex-col lg:flex-row  gap-8'>
+                    <div className='flex flex-col lg:flex-row '>
 
                         {/* JOB POSTING DETAILS */}
                         <div className=' w-full'>
-                            <div><h1 className='text-xl font-bold text-center text-green-500'>Job Details</h1></div>
+                            <div className='flex flex-row  justify-between'>
+                            <div>
+                                <h1 className='text-xl font-bold text-center   text-green-500'>Job Details</h1>
+                                </div>
+
+                                 <div>
+                                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>Close</h1>
+                                </div>
+                                </div>
+
+
+
                             <div>
                                 <label className='block m-1 text-md text-green-500'>Title</label>
                                 <input type='text' required {...register("jobTitle")}

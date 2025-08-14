@@ -12,6 +12,7 @@ export const Chats = () => {
 
   
     const[myId,setMyId]=useState("")
+    const dispatch=useDispatch()
       useEffect(() => {
 
         let token = localStorage.getItem("user");
@@ -23,6 +24,14 @@ export const Chats = () => {
         console.log(loginData+"hereeeee")
     }, [])
   
+
+    
+      const handleModalClick = (event) => {
+        // Stop the click event from bubbling up to parent elements
+        event.stopPropagation();
+        console.log("Idah")
+      };
+
 
     useEffect(() => {
         fetch("https://solvus-api-4.onrender.com/jobs/all-jobs").then(res => res.json()).then(
@@ -36,14 +45,30 @@ export const Chats = () => {
         
     }, []);
 
+      const  closeOverlay=()=>{
+    dispatch({type:"overlay",payload:"close"})
+    
+
+
+  }
+
     
 
     return (
-        <div className=' lg:w-[400px]  sm:w-[200px] flex-col absolute bottom-10 h-[700px] overflow-y-auto bg-green-300'>
-            <h1 className='text-center text-xl     md:text-2xl font-bold text-primary mt-8 md:mt-6   '>Chat Histoy</h1>
-            <div className='grid sm:grid-cols-1 md:grid-cols-1   container mt-2 mx-auto  px-4 bg-white  rounded-xl '>
+        <div   className='  cursor-pointer lg:w-[400px]  sm:w-[200px] flex-col absolute bottom-10  h-[700px]  bg-green-300'>
+            <div className='flex flex-row justify-between '>
+            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>Chat Histoy</h1>
+               <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>Close</h1>
+
+
+               </div>
+            <div className='grid sm:grid-cols-1 md:grid-cols-1  h-[700px] overflow-y-auto container mt-2 mx-auto  px-4 bg-white  rounded-xl '>
                 {applicants.map((people, key) => <Card key={key}  applicants={people} />)}
+            
             </div>
+
+
+
         </div>
     )
 }
@@ -189,6 +214,8 @@ console.log(paymentData)
 
 }
 
+ 
+     
 
 
 
@@ -196,7 +223,7 @@ console.log(paymentData)
     return (
 
 
-        <div className='border shadow-lg hover:border-green-300    w-full    lg:w-[400px]   rounded-xl flex-row  bg-green-100 card'>
+        <div   className='border shadow-lg hover:border-green-300    w-[400px]      rounded-xl flex-row  bg-green-100 card'>
           
         
             

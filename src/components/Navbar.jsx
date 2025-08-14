@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import { Outlet, NavLink, Link } from 'react-router-dom'
 import { LoginContext } from './ContextProvider/Context.jsx';
 import 'boxicons';
@@ -8,7 +8,7 @@ import logoURL from '../assets/img/mana.jpeg'
 import Chaturl from '../assets/img/suit.png.png'
 import { BiChat } from "react-icons/bi";
 import { FaBell, FaSearch } from "react-icons/fa";
-import { FaChevronDown, FaChevronRight, FaGears } from "react-icons/fa6";
+import { FaChevronDown, FaChevronRight, FaGears, FaMessage } from "react-icons/fa6";
 import { FiTable } from "react-icons/fi";
 import { GoGraph } from "react-icons/go";
 import { MdOutlineHeadsetMic, MdSpaceDashboard } from "react-icons/md";
@@ -27,6 +27,7 @@ import LabTabs from '../Pages/Candidate/General.js';
 import { Pending } from './Home/Pending.jsx';
 import { Chats } from './Home/Chats.jsx';
 import { PostJob } from '../Pages/Employer/PostJob.jsx';
+import General from "../Pages/Candidate/General.js"
 //import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
@@ -61,6 +62,7 @@ export const Navbar = () => {
 
     const [loginData, setLoginData] = useState();
      const myOverlay=useSelector((state)=>state.overlay)
+        let menuRef = useRef();
 
     const [navItems, setNavItems] = useState([
         { label: 'Home', path: '/' },
@@ -68,6 +70,12 @@ export const Navbar = () => {
         
     ]
     );
+
+
+    const handleClick=()=>{
+        
+
+    }
     const renderOverLay=()=>{
         if(myOverlay==="Pending"){
                return(
@@ -88,13 +96,28 @@ export const Navbar = () => {
           <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><Pending/></div>
         )
     }
-         else if(myOverlay==="addGig"){
+         else if(myOverlay==="My Account"){
                return(
-          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><PostJob/></div>
+          <div className='flex  absolute bottom-0 right-0  w-[600px] z-50'><General/></div>
         )
+        
 
         
         }
+
+        else if(myOverlay==="Post Gig"){
+               return(
+          <div   className='flex  absolute bottom-0 right-0  w-[600px] z-50'><PostJob/></div>
+        )
+        
+
+        
+        }
+
+
+
+
+        
      
         
 
@@ -176,17 +199,42 @@ export const Navbar = () => {
     const overlayHandler=(overlay)=>{    
         setOverlay(overlay)
         console.log(overlay)
-        dispatch({type:"overlay",payload:"addGig"})
+        dispatch({type:"overlay",payload:overlay})
         setHeight("h-screen")
 
     }
-   
+
+    useEffect(() => {
+    let handler = (e)=>{
+      if(!menuRef.current.contains(e.target)){
+        //setOpen(false);
+        changeOverlay("close")
+        console.log(menuRef.current);
+      }      
+    };
+
+    document.addEventListener("mousedown", handler);
     
+
+    return() =>{
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
+
+  const changeOverlay=(overlay)=>{
+    dispatch({type:"overlay",payload:overlay})
+
+
+    console.log(overlay)
+
+
+  }
 
      
 
     return (
-        <div className='max-w-screen text-sm lg:h-[1050px] item-center  mx-auto  sm:h-screen  fixed  xl:px-16  px-1  '>
+        <div  ref={menuRef}   className='max-w-screen text-sm lg:h-[1050px] item-center  mx-auto  sm:h-screen  fixed  xl:px-16  px-1  '>
 
             <nav  className={` flex justify-between   t-0 w-100%    rounded-b-lg items-center   py-1` }>
                 {/* BRAND */}
@@ -230,9 +278,9 @@ export const Navbar = () => {
                     </ul>
                 }
                 
-                <div   onClick={()=>overlayHandler("addGig")}       className='flex hidden md:flex text-green-500 font-bold  cursor-pointer'>
-                    <FaBrain/>
-                                            Post Gig</div>
+                <div   onClick={()=>overlayHandler("Chats")}       className='flex hidden md:flex text-green-500 font-bold  cursor-pointer'>
+                    <FaMessage/>
+                                            Notifications</div>
            <div className='flex  hidden  md:flex'>
             
             <input   onChange={console.log("Love")} className='rounded-xl p-1  border-2 border-red-900 hover:border-blue-700' type='search'  value={"search"}/>

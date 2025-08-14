@@ -7,18 +7,37 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Profile } from '../../components/Home/profile';
 import { PostJob } from '../Employer/PostJob';
 import  {ProfileInfo} from "./ProfileInfo"
+import { useRef,useEffect } from 'react';
 import { green } from '@mui/material/colors';
 import {SimilarJobs} from "../../components/SimilarJobs"
 import { Update } from './Update';
 
 export default function LabTabs() {
   const [value, setValue] = React.useState('1');
+const modalRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  // Event listener logic
+
+  return () => {
+    document.addEventListener('click', handleClickOutside);
+  };
+}, []);
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      console.log("Capiyo   here")
+      //setIsVisible(false);
+    }
+  };
+
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
   return (
+    <div className='flex ' ref={modalRef}>
     <Box sx={{ background:"#86EFAC",position:"absolute",bottom:50, marginLeft:"20px",marginRight:"20px" 
      ,height:"700px",width: '70%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
@@ -38,5 +57,6 @@ export default function LabTabs() {
         <TabPanel value="3"><Update/></TabPanel>
       </TabContext>
     </Box>
+    </div>
   );
 }

@@ -2,8 +2,9 @@ import { BiChat } from "react-icons/bi";
 import { FaBell, FaSearch } from "react-icons/fa";
 import { FaChevronDown, FaChevronRight, FaGears } from "react-icons/fa6";
 import { FiTable } from "react-icons/fi";
+import { FiPenTool } from "react-icons/fi";
 import { GoGraph } from "react-icons/go";
-import { MdOutlineHeadsetMic, MdSpaceDashboard } from "react-icons/md";
+import { MdOutlineHeadsetMic, MdSpaceDashboard,MdEdit } from "react-icons/md";
 import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarLeftExpand } from "react-icons/tb";
 import { useState } from "react";
 import { TiCalendar } from "react-icons/ti";
@@ -41,6 +42,7 @@ const Sidebar = () => {
   const Menus = [
 
     
+    { title: "Post Gig", icon: <MdEdit  style={{color:'red-200'}}/> },
     { title: "My Account", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
     { title: "Chats", icon: <MdSpaceDashboard  style={{color:'red-200'}}/> },
     { title: "Pending", icon: <BiChat />},

@@ -11,6 +11,7 @@ import { FeaturedJobs } from './components/Home/FeaturedJobs';
 import { reducers } from './components/ReduxPages/reducers';
 import  {thunk} from 'redux-thunk';
 import { Login } from './components/Login/Login';
+import { Sidebar } from 'lucide-react';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logoURL from '../../assets/img/laptop.jpeg'
 import {FaBeer,FaBrain,FaTree,FaHeart, FaEye, FaRedRiver, FaMale, FaHandHolding}  from "react-icons/fa"
@@ -11,14 +11,44 @@ import { useDispatch,useSelector} from "react-redux"
 export const FeaturedJobs = () => {
 
     const [jobs, setJobs] = useState([]);
+     let menuRef = useRef();
+     const dispatch=useDispatch()
 
    
    const [apaiChecker,setApiChecker]=useState(false)
    const[likes,setLikes]=useState([])
 
+  const changeOverlay=(overlay)=>{
+    dispatch({type:"overlay",payload:overlay})
 
-   
+
+    console.log(overlay)
+
+
+  }
+
+
+   useEffect(() => {
+    let handler = (e)=>{
+      if(!menuRef.current.contains(e.target)){
+        //setOpen(false);
+        changeOverlay("close")
+        console.log(menuRef.current);
+      }      
+    };
+
+    //document.addEventListener("mousedown", handler);
     
+
+    return() =>{
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
+  
+
+
+ 
 
     useEffect(() => {
 
@@ -27,10 +57,19 @@ export const FeaturedJobs = () => {
                 //const newData = data
                 setJobs(data)
               console.log(data)
+             
                 
                
             }
         );
+
+       
+
+        
+      
+
+
+
     }, []);
 
 
@@ -72,13 +111,13 @@ const loadLikes=(jobId)=>{
     
 
     return (
-        <div className=''>
+        <div className=' '  ref={menuRef} >
             
                            <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary'>
                             Our Featured Jobs,<span className='text-blue-600'>
                             quality and trust</span></h1></div>
                            
-            <div className='grid sm:grid-cols-2 md:grid-cols-3  gap-1'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3  gap-1' >
 
                 {jobs.map((job, key) => <Card    key={key} job={job} />)}
             
@@ -101,6 +140,7 @@ function Card({ job}) {
      const[workerEmail,setWorkerEmail]=useState("")
          const[btnBg,setBg]=useState("bg-blue-700")
        const   dispatch=useDispatch()
+           //let menuRef = useRef();
 
  
 
@@ -114,9 +154,9 @@ useEffect(() => {
              setMyId(user.userId)
         setMyname(user.userName)
        setWorkerEmail(user.userEmail)
-
         }
-      
+
+        
 
       
        // console.log(LoginContext["userId"])
@@ -290,7 +330,7 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-sm     card    
+        <div     className={`border items-center shadow-sm     card    
         rounded-xl `}>
           
             {/* Card Header */}
