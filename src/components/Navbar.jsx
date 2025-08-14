@@ -293,9 +293,9 @@ export const Navbar = () => {
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
                  {localStorage.getItem("usertoken")?
-                 <div className=' w-screen flex flex-row justify-between'>
-                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  ml-2 hover:text-red-900'>Logout</div> 
-                                <div className='mr-2'> Notifications</div>
+                 <div>
+                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>Logout</div> 
+                                 Notification
                                  </div>:
                                  
 
@@ -370,7 +370,7 @@ export const Navbar = () => {
                                     {/* Hello, {loginData.user.userName} */}
                                     <div onClick={logoutHandler} 
                                     className='border rounded'>
-                                    Logout</div>
+                                    Logou</div>
                                 </div>
                                 :
                                 <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link to="/login" className='py-1 text-primary'>Login</Link></li>
