@@ -80,7 +80,7 @@ const loadLikes=(jobId)=>{
     return (
      <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  bg-green-300'>
            <div className='flex flex-row justify-between '>
-            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>pending gigs</h1>
+            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>be admin</h1>
                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>close</h1>
 
 
@@ -245,7 +245,7 @@ const showRequest=(jobId)=>{
     }
     
     
-                fetch("https://solvus-api-4.onrender.com/case/addAdmin", {
+                fetch("/case/addAdmin", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)
