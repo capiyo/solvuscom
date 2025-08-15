@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import LogoURL from '../../assets/img/mana.jpeg'
 import { useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
 
 
 export const ProfileInfo = () => {
@@ -10,6 +11,7 @@ export const ProfileInfo = () => {
     const[open,setOpen]=useState("max-sm:hidden ")
     const [label,setLabel]=useState("Close")
     const[profile,setProfile]=useState("")
+    const dispatch=useDispatch()
 
     const opener=()=>{
    
@@ -110,10 +112,16 @@ export const ProfileInfo = () => {
         , []);
    
 
+        const closeOverlay=()=>{
+            dispatch({type:"footerOverlay",payload:"close"})
+            
+
+        }
 
 
     return(
           <div className='w-full   h-[600px] overflow-y-auto  items-start  container mt-2 mx-auto  px-2 '>
+            <div  onClick={closeOverlay}>close</div>
                <h1 className='text-sm  font-bold text-gray-700'>UserName:{userName}</h1>
 
             <div className='bg-gradient-white  mx-auto py-12  px-8 rounded-lg'>

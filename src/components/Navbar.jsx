@@ -119,11 +119,13 @@ export const Navbar = () => {
 
         
         }
-
-
-
+          else if(myOverlay==="close"){
+               return(
+          <div></div>
+        )
 
         
+        }      
      
         
 
@@ -237,6 +239,10 @@ export const Navbar = () => {
 
   }
 
+  const tryOverlay=()=>{
+    console.log("Hereeee")
+  }
+
      
 
     return (
@@ -293,9 +299,9 @@ export const Navbar = () => {
                 <div className='flex rounded-xl p-1 border-blue-800'><FaSearch/> </div>
                 </div>
                  {localStorage.getItem("usertoken")?
-                 <div className='flex flex-row w-[400px] justify-between ' >
-                                 <div  onClick={logoutHandler} className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>logout</div> 
-                                 <div  className='flex md:flex lg:flex cursor-pointer  hover:text-red-900'>notifications</div> 
+                 <div className='flex flex-row w-[400px] justify-between mr-3 ' >
+                                 <div  onClick={logoutHandler} className='mr-7 flex md:flex lg:flex cursor-pointer  hover:text-red-900'>logout</div> 
+                                 <div   onClick={tryOverlay} className='flex md:flex l cursor-pointer  lg:hidden hover:text-red-900'>notifications</div> 
                                  
                                  </div>:
                                  
@@ -379,12 +385,12 @@ export const Navbar = () => {
                     </div>
                 </ul>
             </div>
-                      
-
-
-              {myOverlay !==""? renderOverLay()
+            
+              {myOverlay !=="close"? renderOverLay()
         :""
-          }
+          }          
+
+
           <div        className=' flex absolute  bottom-20 h-16   lg:hidden '> <Footer/></div>
         
 

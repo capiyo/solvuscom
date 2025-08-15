@@ -160,6 +160,7 @@ export const PostJob = () => {
 
   const  closeOverlay=()=>{
     dispatch({type:"overlay",payload:"close"})
+     dispatch({type:"footerOverlay",payload:"close"})
     
 
 
@@ -169,7 +170,7 @@ export const PostJob = () => {
 
 
     return (
-        <div    onClick={handleChildClick}    className='h-[700px] overflow-y-auto mx-auto        sm:w-[200]  lg:w-[300px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
+        <div       className='h-[700px] overflow-y-auto mx-auto        sm:w-[300]  lg:w-[300px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
             <div className='rounded-xl'>
 
                 {/* FORM */}
@@ -180,11 +181,11 @@ export const PostJob = () => {
                         <div className=' w-full'>
                             <div className='flex flex-row  justify-between'>
                             <div>
-                                <h1 className='text-xl font-bold text-center   text-green-500'>Job Details</h1>
+                                <h1 className='text-base  text-center   text-green-500'>Job Details</h1>
                                 </div>
 
                                  <div>
-                                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>Close</h1>
+                                <h1   onClick={closeOverlay}   className='text-base  text-center  cursor-pointer text-green-500'>close</h1>
                                 </div>
                                 </div>
 

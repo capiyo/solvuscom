@@ -37,7 +37,8 @@ useEffect(() => {
   };
 
   return (
-    <div className='flex ' ref={modalRef}>
+    <div>
+      close
     <Box sx={{ background:"#86EFAC",position:"absolute",bottom:50, marginLeft:"20px",marginRight:"20px" 
      ,height:"700px",width: '70%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
@@ -56,6 +57,7 @@ useEffect(() => {
         <TabPanel value="2"><Update/></TabPanel>
         <TabPanel value="3"><Update/></TabPanel>
       </TabContext>
+      
     </Box>
     </div>
   );

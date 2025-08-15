@@ -66,7 +66,7 @@ const Sidebar = () => {
     
     <div className="flex  h-[1000px]    sticky max-sm:hidden ">
       {/* Sidebar section */}
-      <div className={`${open ? "w-50 p-1" : "w-20 p-1"} rounded-xl    bg-green-500  pt-8 relative duration-300 ease-in-out`}>
+      <div className={`${open ? "w-50 p-1" : "w-20 p-1"} rounded-xl    bg-green-400  pt-8 relative duration-300 ease-in-out`}>
         {/* Toggle button sections */}
         <div className={`absolute cursor-pointer -right-4 top-9 w-8 h-8 p-0.5 bg-green border-zinc-50 border-2 rounded-full text-xl flex  ${!open && "rotate-180"} transition-all ease-in-out duration-300`}
           onClick={() =>console.log("Love")}

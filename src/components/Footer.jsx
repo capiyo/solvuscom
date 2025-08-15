@@ -19,25 +19,94 @@ import { SimilarJobs } from './SimilarJobs';
 import { Chats } from './Home/Chats';
 import { Pause } from 'lucide-react';
 import { Pending } from './Home/Pending';
+import { useDispatch,useSelector } from 'react-redux';
 
 export  function Footer() {
     const [value, setValue] = React.useState('recents');
     const [height, setHeight] = React.useState("h-[20px]");
+    const dispatch=useDispatch()
+     const  myValue=useSelector((state)=>state.footerOverlay)
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
+    const handleChange = (event, newValue) => {
+             dispatch({type:"footerOverlay",payload:newValue})
+             setValue(myValue);
+        
+
        // setHeight("h-[50px]");
+  
+      console.log(myValue)
 
     };
 
+        const renderOverLay=()=>{
+            if(myValue==="pending"){
+                   return(
+                  <div className='flex '><Pending/></div>
+            )
+    
+    
+            }
+            else if(myValue==="chats"){
+                   return(
+              <div className='flex  '><Chats/></div>
+            )
+    
+            
+            }
+             
+             else if(myValue==="info"){
+                   return(
+              <div className='flex'><General/></div>
+            )
+            
+    
+            
+            }
+    
+            else if(myValue==="post"){
+                   return(
+              <div   className='flex '><PostJob/></div>
+            )
+        }
+            
+           
+    
+            
+            
+              
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className={`flex    w-screen`}>
+
+            {myValue !=="close"?renderOverLay()
             
-            
-            <div className=' flex   '> {value==="info"?<General/>:""}</div>
-            <div className=' flex'> {value==="pending"?<Pending/>:""}</div>
-            <div className=' flex '> {value==="post"?<PostJob/>:""}</div>
-            <div className=' flex   '> {value==="chats"?<Chats/>:""}</div>
+          :""}
 
             <BottomNavigation sx={{  borderTopLeftRadius:"5px" ,borderTopRightRadius:"5px", width:"100%" ,background:"white"}} value={value} onChange={handleChange}>
               
