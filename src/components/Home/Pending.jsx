@@ -239,13 +239,13 @@ const changebg=()=>{
 const showRequest=(jobId)=>{
     const output={
     "jobId":jobId,
-    "workerName":myName,
-    "workerId":myId,
-    "workerEmail":workerEmail,
+///    "workerName":myName,
+    "adminId":myId,
+//    "workerEmail":workerEmail,
     }
     
     
-                fetch("https://solvus-api-4.onrender.com/jobs/add-applicants", {
+                fetch("https://solvus-api-4.onrender.com/case/addAdmin", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)
@@ -366,7 +366,7 @@ const showRequest=(jobId)=>{
                 </div>
                
                  <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px]   lg:text-base'>#36</span> <FaHeart/>   
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm   lg:text-sm'>#36</span> <FaHeart/>   
                            
                          
                         </span>

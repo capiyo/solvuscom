@@ -113,6 +113,8 @@ export const ProfileInfo = () => {
    
 
         const closeOverlay=()=>{
+            dispatch({type:"overlay",payload:"close"})     
+
             dispatch({type:"footerOverlay",payload:"close"})
             
 
