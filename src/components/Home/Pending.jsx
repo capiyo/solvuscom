@@ -245,7 +245,7 @@ const showRequest=(jobId)=>{
     }
     
     
-                fetch("/case/addAdmin", {
+                fetch("https://solvus-api-4.onrender.com/case/addAdmin", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)
