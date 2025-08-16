@@ -232,11 +232,11 @@ console.log(paymentData)
     return (
 
 
-        <div   className='border shadow-lg hover:border-green-300    w-[400px]      rounded-xl flex-row  bg-green-100 card'>
+        <div   className='border shadow-lg hover:border-green-300    w-[300px]      rounded-xl flex-row  bg-green-100 card'>
           
         
             
-          <div className='flex items-center gap-3'>
+          <div className='flex gap-3'>
                 <div>
                     {/* company image */}
                     <img src={logoURL} alt={applicants.workerName} className='rounded-full w-12' />

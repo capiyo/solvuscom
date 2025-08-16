@@ -146,14 +146,14 @@ export const Worker = () => {
         <div  className='flex flex-col ml-2 w-100%'>
          <div className='flex  flex-col  ' >
              <div className="flex  flex-row">
-                                    <div className='family-rubik font-bold text-blue-800'>{caseTitel}</div>
-                                    <div className='family-rubik font-bold text-blue-800  ml-2'>{`budget: Ksh${mybudget}`}</div>
+                                    <div className='family-rubik font-bold text-blue-800 text-sm'>{caseTitel}</div>
+                                    <div className='family-rubik font-bold text-blue-800  ml-2 text-sm'>{`budget: Ksh${mybudget}`}</div>
              </div>
                                     <div className='flex flex-row'>
-                                    <div className='family-rubik'> Admin: Mark , </div>
-                                    <div className='family-rubik ml-2'>Agent: {workerName}</div>
+                                    <div className='family-rubik text-sm'> Admin: Mark , </div>
+                                    <div className='family-rubik ml-2 text-sm'>Agent: {workerName}</div>
                                     </div>
-                                      <div className='family-rubik text-green-600'>{'Online'}</div>
+                                      <div className='family-rubik text-green-600 text-sm'>{'Online'}</div>
                                       </div>
 
                                     </div>
@@ -165,7 +165,7 @@ export const Worker = () => {
                                   
                                  
                                       <div className='flex flex-col    overflow-scroll   w-full  mb-[150px] '>
-                                        <div className=' bg-green-100 rounded-xl p-2  w-full'>{notification}</div>
+                                        <div className=' bg-green-100 rounded-xl p-2  w-full text-sm'>{notification}</div>
                                           
                                         
                                         { messageData.map((messageData, key) =>
@@ -205,10 +205,10 @@ export const Worker = () => {
         rounded-xl'>
                <form className='flex flex-row border-blue-800
         rounded-xl'>
-                <input  value={message} onChange={(e) => setMessage(e.target.value)} className ="lg:w-[500px]   w-[300px] text-gray-800  rounded-xl p-2    
-                  border-2 border-blue-600 hover:border-blue-300
+                <input  value={message} onChange={(e) => setMessage(e.target.value)} className ="lg:w-[500px]   w-[300px] text-gray-800      
+                  border-2 border-blue-600 hover:border-blue-300 p-1
         rounded-xl"       type='textArea'  placeholder='Reply' />
-                 <div  onClick={handleChange}   className='text-blue-800   cursor:pointer text-5xl'> <FaArrowAltCircleRight/></div>
+                 <div  onClick={handleChange}   className='text-blue-800   cursor:pointer text-base'> <FaArrowAltCircleRight/></div>
                 
                 </form>           
        </div>                   

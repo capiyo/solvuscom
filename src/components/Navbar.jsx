@@ -8,7 +8,7 @@ import logoURL from '../assets/img/mana.jpeg'
 import Chaturl from '../assets/img/suit.png.png'
 import { BiChat } from "react-icons/bi";
 import { FaBell, FaSearch } from "react-icons/fa";
-import { FaChevronDown, FaChevronRight, FaGears, FaMessage } from "react-icons/fa6";
+import { FaChevronDown, FaChevronRight, FaGears, FaMessage,FaBackward } from "react-icons/fa6";
 import { FiTable } from "react-icons/fi";
 import { GoGraph } from "react-icons/go";
 import { MdOutlineHeadsetMic, MdSpaceDashboard } from "react-icons/md";
@@ -29,6 +29,7 @@ import { Chats } from './Home/Chats.jsx';
 import { PostJob } from '../Pages/Employer/PostJob.jsx';
 import General from "../Pages/Candidate/General.js"
 import { WorkerOverlay } from './Case/workeOverlay.jsx';
+import Backdrop from '@mui/material/Backdrop';
 //import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
@@ -240,7 +241,9 @@ export const Navbar = () => {
   }
 
   const tryOverlay=()=>{
-    console.log("Hereeee")
+      //dispatch({type:"footerOverlay",payload:"chats"})
+       dispatch({type:"footerOverlay",payload:"chats"})
+    
   }
 
      
@@ -301,6 +304,8 @@ export const Navbar = () => {
                  {localStorage.getItem("usertoken")?
                  <div className='flex flex-row w-[400px] justify-between mr-3 ' >
                                  <div  onClick={logoutHandler} className='mr-7 flex md:flex lg:flex cursor-pointer  hover:text-red-900'>logout</div> 
+                                 <Link   to="/home" className='mr-7 flex md:flex lg:flex cursor-pointer  hover:text-red-900'><FaBackward/>Back</Link> 
+
                                  <div   onClick={tryOverlay} className='flex md:flex l cursor-pointer  lg:hidden hover:text-red-900'>notifications</div> 
                                  
                                  </div>:

@@ -16,15 +16,15 @@ export const JobDetails = () => {
    
   return (
     <div className='flex   w-full  lg:flex-row justify-evenly h-[1000px] '>
-        <div>  {gigStatus==="Open"?
+        <div>  {gigStatus==="Started"?
         <div className='overflow-auto  md:flex  h-screen '><Info/></div>:
             <div className='overflow-auto  md:flex  h-screen hidden'><Info/></div>}</div>
 
 
 
 
-        <div className="flex flex -col justify-evenly ">
-      {gigStatus==="Open"?
+        <div className="flex flex-col justify-evenly ">
+      {gigStatus==="Started"?
           <div className='overflow-auto  md:flex  hidden  h-screen'>  <Info/></div>
 
           :

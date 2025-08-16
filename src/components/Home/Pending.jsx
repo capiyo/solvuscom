@@ -116,7 +116,7 @@ useEffect(() => {
         const user = JSON.parse(token);
         setLoginData(user)  
         //console.log(user.userId)
-        setMyId(user.userId)
+        setMyId(user._id)
         setMyname(user.userName)
         setWorkerEmail(user.userEmail)
 
@@ -243,9 +243,9 @@ const showRequest=(jobId)=>{
     "adminId":myId,
 //    "workerEmail":workerEmail,
     }
+    //solvus-api-4.onrender.com
     
-    
-                fetch("https://solvus-api-4.onrender.com/case/addAdmin", {
+                fetch("http://localhost:5000/case/addAdmin", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)

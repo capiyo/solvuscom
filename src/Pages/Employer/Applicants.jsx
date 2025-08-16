@@ -17,7 +17,7 @@ export const Applicants = ({title}) => {
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
 
-        setMyId(user.userId)
+        setMyId(user._id)
         setLoginData(user)
 
         console.log(loginData+"hereeeee")
@@ -86,7 +86,7 @@ function Card({ applicants,title }) {
         workerName:userName,
       posterName:posterName,
       posterEmail:posterEmail,
-        message:"Congratulations  you are assgined the gig  od Angular dev from @Capiyo",
+        message:`Congratulations  you are assigned the gig  of Angular dev from @${posterName}`,
         status:"Started"
     }
        fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
@@ -99,7 +99,7 @@ function Card({ applicants,title }) {
         .then((result) => {
             console.log(result);
             setAssin(false)
-            toast.success("Notiefiled successfully kindly  wait for his reply in your inbox or check thread chat")
+            toast.success("Notified successfully kindly  wait for his reply in your inbox or check thread chat")
             //window.location.href = '/all-jobs';
         })
         .catch((error) => {
@@ -168,10 +168,10 @@ console.log(paymentData)
         .then((res) => res.json())
         .then((result) => {
             console.log(result);
-           // getMessApplicantsData(username,userId,userEmail)
+            getMessApplicantsData(username,userId,userEmail)
             ////getMessApplicantsData()
            // setAssin(false)
-          //  toast.success("Notiefiled successfully kindly  wait for his reply in your inbox or check thread chat")
+        
             //window.location.href = '/all-jobs';
         })
         .catch((error) => {
@@ -237,7 +237,7 @@ console.log(paymentData)
                 {assign?
                         <div className='flex bg-white flex-col  p-2 rounded-xl  -rotate-20  sticky'>
                             <div className='flex'>
-                           <div className='flex flex-row'> <p>Confirm Payment before assigning    <span className=' font-bold text-red-800  font-bold '>
+                           <div className='flex flex-row'> <p>Confirm Payment before assigning  gig to   <span className=' font-bold text-red-800  font-bold '>
                             {`@${applicants.workerName}`}   </span> ,once assigned No reassigng  </p></div>
                             <img src={logoURL} alt='Logog' w className='w-12 rounded-full'/>
                             </div>
