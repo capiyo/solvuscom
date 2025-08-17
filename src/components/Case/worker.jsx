@@ -100,11 +100,11 @@ export const Worker = () => {
       const data={
         message:message,
         caseId:caseId,
-        workerId:workerId,
+  
         posterId:myId
       }
 
-        fetch("http://localhost:5000/workerChats/addWorkerChats", {
+        fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(data)
@@ -208,7 +208,7 @@ export const Worker = () => {
                 <input  value={message} onChange={(e) => setMessage(e.target.value)} className ="lg:w-[500px]   w-[300px] text-gray-800      
                   border-2 border-blue-600 hover:border-blue-300 p-1
         rounded-xl"       type='textArea'  placeholder='Reply' />
-                 <div  onClick={handleChange}   className='text-blue-800   cursor:pointer text-base'> <FaArrowAltCircleRight/></div>
+                 <div  onClick={handleChange}   className='text-blue-800   cursor:pointer text-xl'> <FaArrowAltCircleRight/></div>
                 
                 </form>           
        </div>                   
