@@ -99,7 +99,7 @@ function Card({ applicants,title }) {
         .then((result) => {
             console.log(result);
             setAssin(false)
-            toast.success("Notified successfully kindly  wait for his reply in your inbox or check thread chat")
+          
             //window.location.href = '/all-jobs';
         })
         .catch((error) => {
@@ -168,7 +168,9 @@ console.log(paymentData)
         .then((res) => res.json())
         .then((result) => {
             console.log(result);
-            getMessApplicantsData(username,userId,userEmail)
+            if(getMessApplicantsData(username,userId,userEmail)){
+                  toast.success("Notified successfully kindly  wait for his reply in your inbox or check thread chat")
+            }
             ////getMessApplicantsData()
            // setAssin(false)
         
