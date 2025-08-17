@@ -244,13 +244,13 @@ console.log(paymentData)
                 <div>
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
-                        <span className='pl-1 text-black'>{applicants.workerName} </span>
+                        <span className='pl-1 text-black'>Angular and Spring boot</span>
                     </div>
-                    <h1 className='font-bold text-sm lg:text-lg text-black'>{applicants.workerEmail}</h1>
+                    <h1 className='font-bold text-sm lg:text-lg text-black'>agent</h1>
                 </div>
             </div>
             <div>
-                <p className='text-sm py-1   text-black'  >{applicants.workerEmail}</p>
+                <p className='text-sm py-1   text-black'  ></p>
             </div>
             {/* Footer - apply now and location */}
             <div className='flex justify-between items-center'>
@@ -264,37 +264,15 @@ console.log(paymentData)
                <div className='flex flex-row  justify-evenly w-100%'>
                 
                 <div>
-                    <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>View Profile</button>
+                    <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Ksh 3000</button>
                 </div>
                 <div>
-                    <button  onClick={confirmAssign} className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Assign task</button>
+                    <button  onClick={confirmAssign} className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Live</button>
                 </div>
                 </div>
 
                 <div>
-                {assign?
-                        <div className='flex bg-white flex-col  p-2 rounded-xl  -rotate-20  sticky'>
-                            <div className='flex'>
-                           <div className='flex flex-row'> <p>Confirm Payment before assigning    <span className=' font-bold text-red-800  font-bold '>
-                            {`@${applicants.workerName}`}   </span> ,once assigned No reassigng  </p></div>
-                            <img src={logoURL} alt='Logog' w className='w-12 rounded-full'/>
-                            </div>
-
-
-                             <div className='flex flex-row  justify-evenly w-100%'>
-                
-                <div>
-                    <button  onClick={cancelAssign}           className=' lg:block bg-primary text-white text-sm py-1 px-4 rounded-md'>Cancel</button>
-                </div>
-                <div>
-                <button     onClick={(username,userId,userEmail)=>sendPayments(applicants.workerName,applicants.workerId,applicants.workerEmail)}
-                className=' lg:block bg-primary text-white text-sm py-1 px-4 rounded-md'>Confirm</button>
-                </div>
-                </div>
-                           
-
-                            </div>       
-                            :""}        
+               
                             </div>       
 
                                   
