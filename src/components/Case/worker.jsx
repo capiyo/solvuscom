@@ -238,7 +238,7 @@ function DisplayMessages({messageData,myId}){
   <div className='flex   float-right   items-end w-full   mt-5'>
       <div className='flex flex-row     '></div>
      
-        <div className='flex family-rubik     bg-green-500 p-2 rounded-xl'>{messageData.message} </div>
+        <div className='flex family-rubik     bg-green-100 p-2 rounded-xl'>{messageData.message} </div>
        <img src={manaURL} alt={'companyName'} className='w-5 rounded-full' />
 
     </div>
