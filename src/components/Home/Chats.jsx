@@ -64,9 +64,9 @@ export const Chats = () => {
     
 
     return (
-        <div   className='  cursor-pointer w-[350px]  flex-col absolute bottom-10  h-[700px]  bg-green-300'>
-            <div className='flex flex-row justify-between '>
-            <h1   onClick={setChatPage} className='text-center text-sm flex   flex-row  ml-2  md:text-sm text-red-600 mt-8 md:mt-6   '><FaMessage/> View</h1>
+        <div   className='  cursor-pointer w-[350px]  flex-col absolute bottom-10  h-[700px] bg-white'>
+            <div className='flex flex-row justify-evenly  bg-green-200 rounded-t-lg h-10'>
+            <h1   onClick={setChatPage} className='text-center text-sm flex   flex-row  ml-2  md:text-sm text-red-300  '><FaMessage/> View</h1>
                <h1   onClick={closeOverlay}   className='text-base  text-center  cursor-pointer text-green-500'>close</h1>
 
 
@@ -232,7 +232,7 @@ console.log(paymentData)
     return (
 
 
-        <div   className='border shadow-lg hover:border-green-300    w-[300px]      rounded-xl flex-row  bg-green-100 card'>
+        <div   className='border shadow-lg     w-[300px]      rounded-xl flex-row  bg-white card'>
           
         
             
@@ -244,19 +244,19 @@ console.log(paymentData)
                 <div>
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
-                        <span className='pl-1 text-blue-800'>{applicants.workerName} </span>
+                        <span className='pl-1 text-black'>{applicants.workerName} </span>
                     </div>
-                    <h1 className='font-bold text-md lg:text-lg'>{applicants.workerEmail}</h1>
+                    <h1 className='font-bold text-sm lg:text-lg text-black'>{applicants.workerEmail}</h1>
                 </div>
             </div>
             <div>
-                <p className='text-sm py-4'>{applicants.workerEmail}</p>
+                <p className='text-sm py-1   text-black'  >{applicants.workerEmail}</p>
             </div>
             {/* Footer - apply now and location */}
             <div className='flex justify-between items-center'>
                 <div className='flex justify-center items-center'>
                     <box-icon size='19px' name='pin'></box-icon>
-                    <span className='pl-2'>{applicants.workerEmail} </span>
+                    <span className='pl-2   text-black'>{applicants.workerEmail} </span>
                 </div>
                 
                             
@@ -264,10 +264,10 @@ console.log(paymentData)
                <div className='flex flex-row  justify-evenly w-100%'>
                 
                 <div>
-                    <button className=' lg:block bg-green-500 text-white text-sm py-1 px-4 rounded-md'>View Profile</button>
+                    <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>View Profile</button>
                 </div>
                 <div>
-                    <button  onClick={confirmAssign} className=' lg:block bg-green-500 text-white text-sm py-1 px-4 rounded-md'>Assign task</button>
+                    <button  onClick={confirmAssign} className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Assign task</button>
                 </div>
                 </div>
 

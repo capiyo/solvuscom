@@ -170,7 +170,7 @@ export const PostJob = () => {
 
 
     return (
-        <div       className='h-[700px] overflow-y-auto mx-auto        sm:w-[300]  lg:w-[300px] bg-green-300  px-2 absolute bottom-10 rounded-xl  '>
+        <div       className='h-[600px] overflow-y-auto mx-auto        sm:w-[350px]  lg:w-[350px]  bg-white  px-2 absolute bottom-1 rounded-xl  '>
             <div className='rounded-xl'>
 
                 {/* FORM */}
@@ -179,7 +179,7 @@ export const PostJob = () => {
 
                         {/* JOB POSTING DETAILS */}
                         <div className=' w-full'>
-                            <div className='flex flex-row  justify-between'>
+                            <div className='flex flex-row justify-evenly  bg-green-200 rounded-t-lg h-10'>
                             <div>
                                 <h1 className='text-base  text-center   text-green-500'>Job Details</h1>
                                 </div>
@@ -275,7 +275,7 @@ export const PostJob = () => {
                     {/* Submit button */}
 
                     <div className='flex justify-center my-8'>
-                        <button    className='bg-green-500  text-black text-md py-4 px-16 
+                        <button    className='bg-green-200  text-black text-md py-4 px-16 
                         rounded-md'>Create Job Post</button>
                     </div>
 

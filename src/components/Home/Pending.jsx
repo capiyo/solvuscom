@@ -78,9 +78,9 @@ const loadLikes=(jobId)=>{
     
 
     return (
-     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  bg-green-300'>
-           <div className='flex flex-row justify-between '>
-            <h1 className='text-center text-sm     md:text-sm text-primary mt-8 md:mt-6   '>be admin</h1>
+     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  bg-green-200'>
+           <div className='flex flex-row justify-evenly  bg-green-200 rounded-t-lg h-10'>
+            <h1 className='text-center text-sm     md:text-sm text-primary   '>Be admin</h1>
                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>close</h1>
 
 
@@ -292,7 +292,7 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-sm     card     bg-green-300
+        <div      className={`border items-center shadow-sm     card    bg-green-200
         rounded-xl `}>
           
             {/* Card Header */}
