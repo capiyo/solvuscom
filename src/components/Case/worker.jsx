@@ -6,6 +6,7 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import logoURL from '../../assets/img/laptop.jpeg'
 import  manaURL from '../../assets/img/mana.jpeg'
 import  judge from '../../assets/img/judge.jpg'
+import { useParams } from 'react-router-dom';
 
 export const Worker = () => {
   const[chats,setChats]=useState()
@@ -25,6 +26,7 @@ export const Worker = () => {
      //const budget=useSelector((state)=>state.)
     const mybudget=useSelector((state)=>state.caseData["budget"])
      console.log(caseTitel +"hello title")
+     const {id}=useParams()
              //console.log(caseId,caseTitel)
 
   //const[user,setUser]=useState([])
@@ -80,7 +82,7 @@ export const Worker = () => {
 
     useEffect(() => {
 
-         fetch("https://solvus-api-4.onrender.com/workerChats/getWorkerChats").then(res => res.json()).then(
+         fetch("https://solvus-api-4.onrender.com/case/getWorkerChats").then(res => res.json()).then(
             myData => {
              setMessageData(myData)
             console.log(myData)

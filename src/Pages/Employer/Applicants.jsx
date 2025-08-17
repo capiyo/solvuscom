@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useId } from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoURL from '../../assets/img/laptop.jpeg'
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { LoginContext } from '../../components/ContextProvider/Context';
 import { useDispatch, useSelector } from 'react-redux';
 export const Applicants = ({title}) => {
 
     const [applicants, setApplicants] = useState([]);
+    const {id}=useParams()
     const[loginData, setLoginData]=useState(LoginContext)
+
 
   
     const[myId,setMyId]=useState("")
@@ -55,6 +58,7 @@ function Card({ applicants,title }) {
         const[workerName,setWorkername]=useState("")
         const[loginData,setLoginData]=useState('')
     const[bossPhone,setBossPhone]=useState()
+    const { id }=useParams()
            const caseId=useSelector((state)=>state.caseData['caseId'])
            //const  caseBudget=useSelector((state) =>state.caseData['budget'])
            const caseTitel=useSelector((state)=>state.caseData["caseTitle"])
@@ -97,8 +101,9 @@ function Card({ applicants,title }) {
         })
         .then((res) => res.json())
         .then((result) => {
-            console.log(result);
-            setAssin(false)
+            changeJobStatus()
+            //console.log(result);
+            
           
             //window.location.href = '/all-jobs';
         })
@@ -168,9 +173,9 @@ console.log(paymentData)
         .then((res) => res.json())
         .then((result) => {
             console.log(result);
-            if(getMessApplicantsData(username,userId,userEmail)){
-                  toast.success("Notified successfully kindly  wait for his reply in your inbox or check thread chat")
-            }
+            
+                  getMessApplicantsData(username,useId,userEmail)
+            
             ////getMessApplicantsData()
            // setAssin(false)
         
@@ -189,6 +194,47 @@ console.log(paymentData)
 
 }
 
+const changeJobStatus=()=>{
+    const  updateGigStatus={status:"admin",id:id}
+    console.log(updateGigStatus)
+    //s://solvus-api-4.onrender.com
+    fetch(`http://localhost:5000/jobs/current-job/update`, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(updateGigStatus)
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json(); // Or response.text() if not expecting JSON
+})
+.then(data => {
+    setAssin(false)
+  console.log('Resource updated successfully:', data);
+})
+.catch(error => {
+  console.error('Error updating resource:', error);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+
+}
+
 
 
 
@@ -196,7 +242,7 @@ console.log(paymentData)
     return (
 
 
-        <div className='border shadow-lg hover:border-green-800       lg:w-[500px]   rounded-xl flex-row   card'>
+        <div className='border shadow-lg       lg:w-[500px]   rounded-xl flex-row   card'>
           
         
             
