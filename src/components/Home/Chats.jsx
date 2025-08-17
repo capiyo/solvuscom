@@ -64,7 +64,7 @@ export const Chats = () => {
     
 
     return (
-        <div   className='  cursor-pointer w-[300px]  flex-col absolute bottom-10  h-[700px]  bg-green-300'>
+        <div   className='  cursor-pointer w-[350px]  flex-col absolute bottom-10  h-[700px]  bg-green-300'>
             <div className='flex flex-row justify-between '>
             <h1   onClick={setChatPage} className='text-center text-sm flex   flex-row  ml-2  md:text-sm text-red-600 mt-8 md:mt-6   '><FaMessage/> View</h1>
                <h1   onClick={closeOverlay}   className='text-base  text-center  cursor-pointer text-green-500'>close</h1>
