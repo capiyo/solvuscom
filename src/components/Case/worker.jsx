@@ -54,7 +54,7 @@ export const Worker = () => {
 
    useEffect(() => {
 
-         fetch("https://solvus-api-4.onrender.com/case/getWorkerChats").then(res => res.json()).then(
+         fetch("https://solvus-api-4.onrender.com/case/getNotification").then(res => res.json()).then(
             data => {
               setWorkerEmail(data.workerEmail)
               setWorkerName(data.workerName)
@@ -106,7 +106,7 @@ export const Worker = () => {
         posterId:myId
       }
 
-        fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
+        fetch("http://localhost:5000/case/addWorkerChats", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(data)
