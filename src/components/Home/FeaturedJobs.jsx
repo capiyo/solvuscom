@@ -140,6 +140,8 @@ function Card({ job}) {
      const[workerEmail,setWorkerEmail]=useState("")
          const[btnBg,setBg]=useState("bg-blue-700")
        const   dispatch=useDispatch()
+       //workerId
+       //adminid
            //let menuRef = useRef();
 
  
@@ -368,7 +370,7 @@ const showRequest=(jobId)=>{
             {/* Footer - apply now and location */}            
             <div className={`flex justify-between flex-row ` }> 
 
-                {job.posterId===myId?    <Link to={`/current-job/${job._id}`}>
+                {job.posterId===myId || job.budget===myId ||  job.budget===myId ?    <Link to={`/current-job/${job._id}`}>
                     <div      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
                                  onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
                      text-white text-sm    mt-10 `}>

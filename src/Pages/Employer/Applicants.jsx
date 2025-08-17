@@ -194,7 +194,7 @@ console.log(paymentData)
     return (
 
 
-        <div className='border shadow-lg hover:border-green-800       lg:w-[500px]   rounded-xl flex-row  bg-green-100 card'>
+        <div className='border shadow-lg hover:border-green-800       lg:w-[500px]   rounded-xl flex-row   card'>
           
         
             
@@ -206,9 +206,9 @@ console.log(paymentData)
                 <div>
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
-                        <span className='pl-1 text-blue-800'>{applicants.workerName} </span>
+                        <span className='pl-1 text-blue-800'>{applicants.workerEmail} </span>
                     </div>
-                    <h1 className='font-bold text-md lg:text-lg'>{applicants.workerEmail}</h1>
+                    <h1 className='font-bold text-md lg:text-lg'>{applicants.pSkill}</h1>
                 </div>
             </div>
             <div>

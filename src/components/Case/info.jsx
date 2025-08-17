@@ -141,7 +141,7 @@ export const Info = () => {
                                 </p>
                             </div>
                               <div className='flex justify-center'>
-                                    <button   onClick={opener}  className='block   bg-zinc-500  text-white text-md 
+                                    <button   onClick={opener}  className='block   bg-green-300  text-white text-md 
                                     py-2 px-12 md:px-16 rounded-md'>
                                         {label} Applicants</button>
                                 </div>
