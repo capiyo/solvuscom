@@ -79,7 +79,7 @@ const loadLikes=(jobId)=>{
 
     return (
      <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  bg-green-200'>
-           <div className='flex flex-row justify-evenly  bg-green-200 rounded-t-lg h-10'>
+           <div className='flex flex-row justify-evenly  bg-green-200 rounded-t-xl h-10'>
             <h1 className='text-center text-sm     md:text-sm text-primary   '>Be admin</h1>
                <h1   onClick={closeOverlay}   className='text-xl  text-center  cursor-pointer text-green-500'>close</h1>
 
@@ -292,7 +292,7 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-sm     card    bg-green-200
+        <div      className={`border items-center shadow-sm     card    bg-gradient-to-br white to-green-100
         rounded-xl `}>
           
             {/* Card Header */}
@@ -325,7 +325,7 @@ const showRequest=(jobId)=>{
 
                 {job.posterId===myId?    <Link to={`/current-job/${job._id}`}>
                     <div      onMouseLeave={(myValue)=>buttonOut(1)} onMouseEnter={()=>buttonEnter(1)}
-                                 onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-blue-900 font-bold
+                                 onClick={(gigTitle,gigId)=>getGigData(job.jobTitle,job.jobID,job.budget,job.status)} className={`lg:block  text-black font-bold
                      text-white text-sm    mt-10 `}>
                         <div    className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base'><FaEye/>view </div>
                         </div>
@@ -336,7 +336,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm py-1 px-4 mt-10   `}>
 
-                           <div    className='sm:text-[5px] flex flex-row  text-violet-900  lg:text-base '><FaRedRiver/>follow</div>
+                           <div    className='sm:text-[5px] flex flex-row  bg-green-200 text-black  lg:text-base  p-2 rounded-full'><FaRedRiver/>follow</div>
                       
                         </div>
                 </div>}
@@ -350,7 +350,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm    mt-10`}>
 
-                           <div    className='flex flex-row  text-green-500  sm:text-[10px]  lg:text-base '><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-black  sm:text-[10px]  lg:text-base  bg-green-200  p-2 rounded-full '><FaMale/>@{job.posterName}</div>
                       
                         </div>
                 </div>
@@ -358,22 +358,22 @@ const showRequest=(jobId)=>{
                  <div >
                     <div onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
                      text-white text-sm py-1 px-4  mt-10   `}>
-                        <div    className='flex flex-row text-blue-500  sm:text-[9px]   lg:text-base'><FaHandHolding/>Be Admin</div> </div>
+                        <div    className='flex flex-row text-black  sm:text-[9px]   bg-green-200  lg:text-base p-2 rounded-full'><FaHandHolding/>Be Admin</div> </div>
                         
                 </div> 
                   
                  
                 </div>
                
-                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm   lg:text-sm'>#36</span> <FaHeart/>   
+                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-black sm:text-[5px] '>
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm   lg:text-sm  bg-violet-600  p-2 rounded-full'>#36</span> <FaHeart/>   
                            
                          
                         </span>
 
 {request?
                         <div className='flex bg-zinc-300 w-[200px]p-1 rounded-xl absolute -rotate-20'>
-                           <div className='flex flex-col'> <p>Hello   <span className='text-blue-800  font-bold '>{`@${myName}    `}</span>Your request has been sent Successfully,wait for notification.Thanks</p></div>
+                           <div className='flex flex-col'> <p>Hello   <span className='text-black font-bold '>{`@${myName}    `}</span>Your request has been sent Successfully,wait for notification.Thanks</p></div>
                             <img src={logoURL} alt='Logog' w className='w-12 rounded-full'/>
                             </div>       
                             :""}               

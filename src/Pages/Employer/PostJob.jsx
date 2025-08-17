@@ -170,7 +170,7 @@ export const PostJob = () => {
 
 
     return (
-        <div       className='h-[600px] overflow-y-auto mx-auto        sm:w-[350px]  lg:w-[350px]  bg-white  px-2 absolute bottom-1 rounded-xl  '>
+        <div       className='h-[600px] overflow-y-auto mx-auto        w-[350px]  bg-white  px-2 absolute bottom-1 rounded-xl  '>
             <div className='rounded-xl'>
 
                 {/* FORM */}
