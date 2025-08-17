@@ -14,12 +14,13 @@ export const JobDetails = () => {
   const[job,setJob]=useState()
   const [status,setStatus]=useState("")
     const { id } = useParams();
+//    const  gigStatus=useSelector((state)=>state.gigStatus)
 
       useEffect(() => {
           
           fetch(`https://solvus-api-4.onrender.com/jobs/current-job/${id}`).then(res => res.json()).then(
               data => { setStatus(data.status)
-                //console.log(status)
+                console.log(gigStatus)
 
               
               //console.log(job)
@@ -37,7 +38,7 @@ export const JobDetails = () => {
 
     <div className='flex   w-full  lg:flex-row justify-evenly h-[1000px] '>
     
-        <div>  {status ==="Open"?
+        <div>  {gigStatus ==="Open"?
         <div className='overflow-auto  md:flex  h-screen '><Info/></div>:
 
             <div className='overflow-auto  md:flex  h-screen '><Worker/></div>}
@@ -49,7 +50,7 @@ export const JobDetails = () => {
         <div className="flex flex-col justify-evenly">
 
 
-      {status ==="pending"?
+      {gigStatus ==="pending"?
           <div className='overflow-auto  md:flex  hidden  h-screen'>  <Info/></div>
           :
           <div>
