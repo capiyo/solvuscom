@@ -66,7 +66,7 @@ export const Info = () => {
 
     const [loginData, setLoginData] = useState();
     useEffect(() => {
-        const lastId={myId:myId}
+        //const lastId={myId:myId}
         
         fetch(`https://solvus-api-4.onrender.com/jobs/current-job/${id}`).then(res => res.json()).then(
             data => { setJob(data)
