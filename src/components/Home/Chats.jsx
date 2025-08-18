@@ -37,12 +37,10 @@ export const Chats = () => {
 
     useEffect(() => {
         const lastId={myId:myId}
-    fetch(`http://localhost:5000/jobs/getRooms/${lastId}`).then(res => res.json()).then(
+    fetch(`https://solvus-api-4.onrender.com/jobs/getRooms/${myId}`).then(res => console.log("Capiyo")).then(
             data =>( 
-                console.log("love")
-                //const newData = data
-                //setApplicants(newData)
-                //console.log(newData)
+                console.log(data)
+               
             )
 
             

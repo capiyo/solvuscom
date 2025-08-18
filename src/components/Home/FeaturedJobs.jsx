@@ -153,7 +153,7 @@ useEffect(() => {
         //setLoginData(user)  
         //console.log(user.userId)
         if(user){
-             setMyId(user.userId)
+             setMyId(user._id)
         setMyname(user.userName)
        setWorkerEmail(user.userEmail)
         }
