@@ -8,8 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaMessage } from 'react-icons/fa6';
 export const Chats = () => {
 
-    const [applicants, setApplicants] = useState([]);
+    const [applicants, setApplicants] = useState();
     const[loginData, setLoginData]=useState(LoginContext)
+    //const[id,setId]=useState("")
 
   
     const[myId,setMyId]=useState("")
@@ -18,9 +19,9 @@ export const Chats = () => {
 
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
-
-        setMyId(user.userId)
-        setLoginData(user)
+              setLoginData(user)
+        setMyId(user._id)
+  
 
         console.log(loginData+"hereeeee")
     }, [])
@@ -30,18 +31,21 @@ export const Chats = () => {
       const handleModalClick = (event) => {
         // Stop the click event from bubbling up to parent elements
         event.stopPropagation();
-        console.log("Idah")
+        
       };
 
 
     useEffect(() => {
-        fetch("https://solvus-api-4.onrender.com/jobs/all-jobs").then(res => res.json()).then(
-            data => {
-                const newData = data
-                setApplicants(newData)
-                console.log(newData)
+        const lastId={myId:myId}
+    fetch(`http://localhost:5000/jobs/getRooms/${lastId}`).then(res => res.json()).then(
+            data =>( 
+                console.log("love")
+                //const newData = data
+                //setApplicants(newData)
+                //console.log(newData)
+            )
 
-            }
+            
         ).catch((error)=>console.log(error));
         
     }, []);
@@ -72,7 +76,8 @@ export const Chats = () => {
 
                </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-1  h-[700px] overflow-y-auto container mt-2 mx-auto  px-4 bg-white  rounded-xl '>
-                {applicants.map((people, key) => <Card key={key}  applicants={people} />)}
+                {/*applicants.map((people, key) => <Card key={key}  applicants={people} />)*/
+                }
             
             </div>
 

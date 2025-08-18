@@ -48,7 +48,7 @@ export const PostJob = () => {
        // setLoginData(user)  
         //console.log(user.userId)
         if(user){
-        setBossId(user.userId)
+        setBossId(user._id)
         setPosterName(user.userName)
         setBossPhone(user.phoneNumber)
         }
