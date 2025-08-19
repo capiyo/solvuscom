@@ -125,7 +125,7 @@ export const Worker = () => {
 
           }
 
-           fetch("https://solvus-api-4.onrender.com/case/addChatlist", {
+           fetch("https://solvus-api-4.onrender.com/jobs/addChatlist", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(listData)
