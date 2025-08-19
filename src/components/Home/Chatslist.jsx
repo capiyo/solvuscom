@@ -5,7 +5,7 @@ import logoURL from '../../assets/img/laptop.jpeg'
 import { toast } from 'react-toastify';
 import { LoginContext } from '../ContextProvider/Context';
 import { useDispatch, useSelector } from 'react-redux';
-import { FaMessage } from 'react-icons/fa6';
+import { FaMessage,FaEye } from 'react-icons/fa6';
 export const Chats = () => {
 
     const [applicants, setApplicants] = useState();
@@ -112,6 +112,7 @@ function Card({ chatlist }) {
         const[workerName,setWorkername]=useState("")
         const[loginData,setLoginData]=useState('')
     const[bossPhone,setBossPhone]=useState()
+    const dispatch=useDispatch()
            const caseId=useSelector((state)=>state.caseData['caseId'])
            //const  caseBudget=useSelector((state) =>state.caseData['budget'])
            const caseTitel=useSelector((state)=>state.caseData["caseTitle"])
@@ -197,6 +198,20 @@ function Card({ chatlist }) {
     }, [myId])
 
 
+ const  closeOverlay=()=>{
+
+    dispatch({type:"overlay",payload:"close"})
+     dispatch({type:"footerOverlay",payload:"close"})
+    
+
+
+  }
+
+  const  setChatPage=()=>{
+       dispatch({type:"overlay",payload:"chatpage"})
+
+
+  }
 
 
 
@@ -268,12 +283,22 @@ console.log(paymentData)
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
                         <span className='pl-1 text-black'>{chatlist.jobTitle}</span>
+                          <Link to={`/current-job/${chatlist.jobId}`}>
+                                            <div  className={`lg:block  text-blue-900 
+                                                 mt-10 `}>
+                                                <div    onClick={closeOverlay} className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base '><FaEye/>view </div>
+                                                </div>
+                                                
+                                        </Link>
+                       
                     </div>
                     <h1 className='font-bold text-sm lg:text-lg text-black'>{chatlist.role}</h1>
                 </div>
             </div>
             <div>
-                <p className='text-sm py-1   text-black'  ></p>
+                <p className='text-sm py-1   text-black'  >Hasokom is looking for Django developer to work on their api
+                    kindly send request
+                </p>
             </div>
             {/* Footer - apply now and location */}
             <div className='flex justify-between items-center'>
@@ -290,7 +315,7 @@ console.log(paymentData)
                     <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Ksh 3000</button>
                 </div>
                 <div>
-                    <button  onClick={confirmAssign} className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Live</button>
+                    <button  onClick={confirmAssign} className=' lg:block bg-blue-600 text-black text-sm py-1 px-4 rounded-md'>Live</button>
                 </div>
                 </div>
 
