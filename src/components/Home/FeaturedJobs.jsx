@@ -365,7 +365,7 @@ const showRequest=(jobId)=>{
             </div>
             <div className='flex flex-col'>
                 <FaBrain/>
-                <p className='py-4  lg:text-base   sm:text-sm/8'>{job.description}</p>
+                <p className='py-1  lg:text-base   sm:text-sm/8'>{job.description}</p>
             </div>
             {/* Footer - apply now and location */}            
             <div className={`flex justify-between flex-row ` }> 
@@ -412,7 +412,7 @@ const showRequest=(jobId)=>{
                  
                 </div>
                
-                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
+                 <span className='font-extrabold text-xl flex flex-row  mt-30 md:text-3xl text-green-500 sm:text-[5px] '>
                         <span  onClick={(event)=>submitLikes(job._id)} className='text-sm sm:text-[5px]   lg:text-base '>#36</span> <FaHeart/>   
                            
                          

@@ -318,7 +318,7 @@ const showRequest=(jobId)=>{
             </div>
             <div className='flex flex-col'>
                 <FaBrain/>
-                <p className='py-4  lg:text-lg    sm:text-sm/8'>{job.description}</p>
+                <p className='py-1  lg:text-lg    sm:text-sm/8'>{job.description}</p>
             </div>
             {/* Footer - apply now and location */}            
             <div className={`flex justify-between flex-row ` }> 
@@ -350,7 +350,7 @@ const showRequest=(jobId)=>{
                     <div  onMouseLeave={(myValue)=>buttonOut(2)}   onMouseEnter={(myValue)=>buttonEnter(2)}className={`lg:block  
                      text-white text-sm    mt-10`}>
 
-                           <div    className='flex flex-row  text-black  sm:text-[10px]  lg:text-base  bg-green-200  p-2 rounded-full '><FaMale/>@{job.posterName}</div>
+                           <div    className='flex flex-row  text-black  sm:text-[10px]  lg:text-base  bg-green-200  p-1 rounded-full '><FaMale/>@{job.posterName}</div>
                       
                         </div>
                 </div>
@@ -358,15 +358,15 @@ const showRequest=(jobId)=>{
                  <div >
                     <div onClick={(event)=>showRequest(job._id)}  onMouseEnter={(myValue)=>buttonEnter(3)}  onMouseLeave={(myValue)=>buttonOut(3)} className={`lg:block 
                      text-white text-sm py-1 px-4  mt-10   `}>
-                        <div    className='flex flex-row text-black  sm:text-[9px]   bg-green-200  lg:text-base p-2 rounded-full'><FaHandHolding/>Be Admin</div> </div>
+                        <div    className='flex flex-row text-black  sm:text-[9px]   bg-green-200  lg:text-base p-1 rounded-full'><FaHandHolding/>Be Admin</div> </div>
                         
                 </div> 
                   
                  
                 </div>
                
-                 <span className='font-extrabold text-xl flex flrx-row  mt-30 md:text-3xl text-black sm:text-[5px] '>
-                        <span  onClick={(event)=>submitLikes(job._id)} className='text-sm   lg:text-sm  bg-violet-600  p-2 rounded-full'>#36</span> <FaHeart/>   
+                 <span className='flex flex-row  text-black sm:text-[5px] '>
+                        <span  onClick={(event)=>submitLikes(job._id)} className='text-base   lg:text-sm   p-1  rounded-full'>#36</span> <FaHeart/>   
                            
                          
                         </span>
