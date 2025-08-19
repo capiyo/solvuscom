@@ -39,7 +39,7 @@ useEffect(() => {
   return (
     <div>
       close
-    <Box sx={{ background:"#86EFAC",position:"absolute",bottom:50, marginLeft:"20px",marginRight:"20px" 
+    <Box sx={{ background:"#ffffff",position:"absolute",bottom:50, marginLeft:"20px",marginRight:"20px" 
      ,height:"700px",width: '70%' ,borderTopLeftRadius:"20px" ,borderTopRightRadius:"20px" , typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
