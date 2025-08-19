@@ -30,6 +30,7 @@ import { PostJob } from '../Pages/Employer/PostJob.jsx';
 import General from "../Pages/Candidate/General.js"
 import { WorkerOverlay } from './Case/workeOverlay.jsx';
 import Backdrop from '@mui/material/Backdrop';
+import { Notifications } from './Home/Notifications.jsx';
 //import { useSelector,useDispatch } from 'react-redux';
 
 const employerNavItems = [
@@ -61,6 +62,9 @@ const candidateNavItems = [
 ];
 
 export const Navbar = () => {
+
+    const [notification,setNotification]=useState([])
+
 
     const [loginData, setLoginData] = useState();
      const myOverlay=useSelector((state)=>state.overlay)
@@ -118,8 +122,14 @@ export const Navbar = () => {
           <div   className='flex  absolute bg-slate-400 bottom-0 right-0 z-50'><WorkerOverlay/></div>
         )
 
+
+
         
         }
+           else if(myOverlay==="notifications"){
+               return(
+          <div   className='flex  absolute bg-slate-400 bottom-0 right-0 z-50'><PostJob/></div>
+        )}
           else if(myOverlay==="close"){
                return(
           <div></div>
@@ -145,8 +155,32 @@ export const Navbar = () => {
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
         setLoginData(user)
+        console.log(user.userid)
+            fetch(`https://solvus-api-4.onrender.com/case/getNotifications/${user.userId}`).then(res => res.json()).then(
+                data => {
+                    const newData = data
+                    setNotification(data)
+                    console.log(newData)
+    
+                }
+            ).catch((error)=>console.log(error));
         console.log(loginData)
     }, [])
+
+    
+     /*   useEffect(() => {
+            fetch("https://solvus-api-4.onrender.com/case/getNotifications").then(res => res.json()).then(
+                data => {
+                    const newData = data
+                    setNotification(data)
+                    console.log(newData)
+    
+                }
+            ).catch((error)=>console.log(error));
+            
+        }, []);*/
+    
+        
 
 
     useEffect(() => {
@@ -241,8 +275,15 @@ export const Navbar = () => {
   }
 
   const tryOverlay=()=>{
+    if(notification.length>0){
+         dispatch({type:"footerOverlay",payload:"notifications"})
+
+    }
+    else{
+         dispatch({type:"footerOverlay",payload:"chats"})
+    }
       //dispatch({type:"footerOverlay",payload:"chats"})
-       dispatch({type:"footerOverlay",payload:"chats"})
+      
     
   }
 
@@ -306,7 +347,8 @@ export const Navbar = () => {
                                  <div  onClick={logoutHandler} className='mr-7 flex md:flex lg:flex cursor-pointer  hover:text-red-900'>logout</div> 
                                  <Link   to="/home" className='mr-7 flex md:flex lg:flex cursor-pointer  hover:text-red-900'><FaBackward/>Back</Link> 
 
-                                 <div   onClick={tryOverlay} className='flex md:flex l cursor-pointer  lg:hidden hover:text-red-900'>notifications</div> 
+                                 <div   onClick={tryOverlay} className='flex md:flex l cursor-pointer  lg:hidden hover:text-red-900'>
+                                    <span className='flex text-red-600'>{notification.length} </span>notifications</div> 
                                  
                                  </div>:
                                  

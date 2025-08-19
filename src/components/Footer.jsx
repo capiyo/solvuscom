@@ -20,6 +20,7 @@ import { Chats } from './Home/Chatslist';
 import { Pause } from 'lucide-react';
 import { Pending } from './Home/Pending';
 import { useDispatch,useSelector } from 'react-redux';
+import { Notifications } from './Home/Notifications';
 
 export  function Footer() {
     const [value, setValue] = React.useState('recents');
@@ -53,6 +54,11 @@ export  function Footer() {
     
             
             }
+              else if(myValue==="notifications"){
+                   return(
+              <div className='flex  '><Notifications/></div>
+            )
+          }
              
              else if(myValue==="info"){
                    return(
