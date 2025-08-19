@@ -103,7 +103,8 @@ export const Worker = () => {
         message:message,
         caseId:caseId,
   
-        posterId:myId
+        posterId:myId,
+        role:"owner"
       }
 
         fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
@@ -114,6 +115,31 @@ export const Worker = () => {
         })
         .then((res) => res.json())
         .then((result) => {
+          const listData={
+          status:"live",
+            role:"agent",
+            budget:"8000",
+            jobTitle:"Pyhon  dev",
+            jobId:"id"
+
+
+          }
+
+           fetch("https://solvus-api-4.onrender.com/case/addChatlist", {
+            method: "POST",
+            headers: {'content-type' : 'application/json'},
+            body: JSON.stringify(listData)
+            
+        })
+          // addChatlist
+        //jobId,
+        //budget
+        //role
+        //jobtitle
+        //progress
+
+
+
             console.log(result);
             setMessage("")
         

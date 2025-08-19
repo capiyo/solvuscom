@@ -19,11 +19,23 @@ export const Chats = () => {
 
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
-              setLoginData(user)
-        setMyId(user._id)
-  
+                if(user){
+                   //  const lastId=JSON.stringify({user.userId})
+             //setMyId(user.userId)
+                 fetch(`http://localhost:5000/jobs/getRooms/${user.userId}`).then(res =>res.json()).then(
+            data =>( 
+                console.log(data)
+               // setApplicants(data)
+                //console.log(applicants)
+               
+            )
 
-        console.log(loginData+"hereeeee")
+            
+        ).catch((error)=>console.log(error));
+             
+                }
+
+      //  console.log(loginData+"hereeeee")
     }, [])
   
 
@@ -35,9 +47,14 @@ export const Chats = () => {
       };
 
 
-    useEffect(() => {
-        const lastId={myId:myId}
-    fetch(`https://solvus-api-4.onrender.com/jobs/getRooms/${myId}`).then(res => console.log("Capiyo")).then(
+    /*useEffect(() => {
+        const creds={userId:myId}
+
+
+
+        const lastId=JSON.stringify(creds)
+        console.log(lastId)
+    fetch(`http://localhost:5000/jobs/getRooms/${lastId}`).then(res => console.log("Capiyo")).then(
             data =>( 
                 console.log(data)
                
@@ -47,6 +64,7 @@ export const Chats = () => {
         ).catch((error)=>console.log(error));
         
     }, []);
+*/
 
       const  closeOverlay=()=>{
 
