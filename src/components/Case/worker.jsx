@@ -101,36 +101,42 @@ export const Worker = () => {
     const handleChange=()=>{
       const data={
         message:message,
-        caseId:caseId,
-  
+        caseId:caseId,  
         posterId:myId,
         role:"owner"
       }
-
-        fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
-            method: "POST",
-            headers: {'content-type' : 'application/json'},
-            body: JSON.stringify(data)
-            
-        })
-        .then((res) => res.json())
-        .then((result) => {
-          const listData={
+         const listData={
           status:"live",
             role:"agent",
             budget:"8000",
-            jobTitle:"Pyhon  dev",
+            jobTitle:"Django",
             jobId:"id"
 
 
           }
 
-           fetch("https://solvus-api-4.onrender.com/jobs/addChatlist", {
+        fetch("http://localhost:5000/case/addWorkerChats", {
+            method: "POST",
+            headers: {'content-type' : 'application/json'},
+            body: JSON.stringify(data)
+            
+        }).then((res) => {
+            //res.json()
+
+
+            fetch("http://localhost:5000/jobs/addChatlist", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(listData)
             
         })
+        })
+
+        
+
+        .then((result) => {
+         
+         
           // addChatlist
         //jobId,
         //budget

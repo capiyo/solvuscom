@@ -16,7 +16,7 @@ import { Profile } from './Home/profile';
 import { PostJob } from '../Pages/Employer/PostJob'
 import General from '../Pages/Candidate/General';
 import { SimilarJobs } from './SimilarJobs';
-import { Chats } from './Home/Chats';
+import { Chats } from './Home/Chatslist';
 import { Pause } from 'lucide-react';
 import { Pending } from './Home/Pending';
 import { useDispatch,useSelector } from 'react-redux';

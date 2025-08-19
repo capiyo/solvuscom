@@ -9,6 +9,7 @@ import { FaMessage } from 'react-icons/fa6';
 export const Chats = () => {
 
     const [applicants, setApplicants] = useState();
+    const[chatlist,setChatlist]=useState([])
     const[loginData, setLoginData]=useState(LoginContext)
     //const[id,setId]=useState("")
 
@@ -22,10 +23,11 @@ export const Chats = () => {
                 if(user){
                    //  const lastId=JSON.stringify({user.userId})
              //setMyId(user.userId)
-                 fetch(`http://localhost:5000/jobs/getRooms/${user.userId}`).then(res =>res.json()).then(
+                 fetch(`http://localhost:5000/jobs/getChatlist`).then(res =>res.json()).then(
             data =>( 
-                console.log(data)
-               // setApplicants(data)
+                //console.log(data)
+              // setApplicants(data)
+              setChatlist(data)
                 //console.log(applicants)
                
             )
@@ -91,8 +93,8 @@ export const Chats = () => {
 
 
                </div>
-            <div className='grid sm:grid-cols-1 md:grid-cols-1  h-[700px] overflow-y-auto container mt-2 mx-auto  px-4 bg-white  rounded-xl '>
-                {/*applicants.map((people, key) => <Card key={key}  applicants={people} />)*/
+            <div className='grid sm:grid-cols-1 md:grid-cols-1   overflow-y-auto container mt-1 mx-auto  px-4 bg-white  rounded-xl '>
+                {chatlist.map((people, key) => <Card key={key}  chatlist={people} />)
                 }
             
             </div>
@@ -103,7 +105,7 @@ export const Chats = () => {
     )
 }
 
-function Card({ applicants }) {
+function Card({ chatlist }) {
       const[assign,setAssin]=useState(false)
         const[workerId,setWorkerId]=useState('')
         const[posterId,setPosterId]=useState("")
@@ -253,21 +255,21 @@ console.log(paymentData)
     return (
 
 
-        <div   className='border shadow-lg     w-[300px]      rounded-xl flex-row  bg-white card'>
+        <div   className='border shadow-lg     w-[300px]       rounded-xl flex-row  bg-white card'>
           
         
             
           <div className='flex gap-3'>
                 <div>
                     {/* company image */}
-                    <img src={logoURL} alt={applicants.workerName} className='rounded-full w-12' />
+                    <img src={logoURL} alt={chatlist.jobTitle} className='rounded-full w-12' />
                 </div>
                 <div>
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
-                        <span className='pl-1 text-black'>Angular and Spring boot</span>
+                        <span className='pl-1 text-black'>{chatlist.jobTitle}</span>
                     </div>
-                    <h1 className='font-bold text-sm lg:text-lg text-black'>agent</h1>
+                    <h1 className='font-bold text-sm lg:text-lg text-black'>{chatlist.role}</h1>
                 </div>
             </div>
             <div>
@@ -277,7 +279,7 @@ console.log(paymentData)
             <div className='flex justify-between items-center'>
                 <div className='flex justify-center items-center'>
                     <box-icon size='19px' name='pin'></box-icon>
-                    <span className='pl-2   text-black'>{applicants.workerEmail} </span>
+                    <span className='pl-2   text-black'>{chatlist.budget} </span>
                 </div>
                 
                             

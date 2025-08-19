@@ -25,7 +25,7 @@ import SwipeableViews from "react-swipeable-views";
 import { Register } from './Login/Register.jsx';
 import LabTabs from '../Pages/Candidate/General.js';
 import { Pending } from './Home/Pending.jsx';
-import { Chats } from './Home/Chats.jsx';
+import { Chats } from './Home/Chatslist.jsx';
 import { PostJob } from '../Pages/Employer/PostJob.jsx';
 import General from "../Pages/Candidate/General.js"
 import { WorkerOverlay } from './Case/workeOverlay.jsx';
