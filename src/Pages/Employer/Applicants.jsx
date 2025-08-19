@@ -173,8 +173,12 @@ console.log(paymentData)
         .then((res) => res.json())
         .then((result) => {
             console.log(result);
-            
+            if(result){
+                 
                   getMessApplicantsData(username,useId,userEmail)
+
+            }
+           
             
             ////getMessApplicantsData()
            // setAssin(false)
@@ -195,10 +199,10 @@ console.log(paymentData)
 }
 
 const changeJobStatus=()=>{
-    const  updateGigStatus={status:"admin",id:id}
+    const  updateGigStatus={status:"admin",id:id,agentId:myId}
     console.log(updateGigStatus)
     //s://solvus-api-4.onrender.com
-    fetch(`http://localhost:5000/jobs/current-job/update`, {
+    fetch(`https://solvus-api-4.onrender.com/jobs/current-job/update`, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
