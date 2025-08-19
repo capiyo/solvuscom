@@ -239,7 +239,7 @@ export const Worker = () => {
         rounded-xl'>
                <form className='flex flex-row border-blue-800
         rounded-xl'>
-                <input  value={message} onChange={(e) => setMessage(e.target.value)} className ="lg:w-[500px]   w-[300px] text-gray-800      
+                <input  value={message} onChange={(e) => setMessage(e.target.value)} className ="lg:w-[500px]   px-2 w-[300px] text-gray-800      
                   border-2 border-blue-600 hover:border-blue-300 p-1
         rounded-xl"       type='textArea'  placeholder='Reply' />
                  <div  onClick={handleChange}   className='text-blue-800   cursor:pointer text-xl'> <FaArrowAltCircleRight/></div>
@@ -267,11 +267,9 @@ function DisplayMessages({messageData,myId}){
   if(messageData.posterId  === myId){
     console.log("here " +myId)
     return(
-  <div className='flex   float-right   items-end w-full   mt-5'>
-      <div className='flex flex-row     '></div>
-     
+  <div className='flex   float-right justify-end   text-base w-full   mt-5'> 
         <div className='flex family-rubik     bg-green-100 p-2 rounded-xl'>{messageData.message} </div>
-       <img src={manaURL} alt={'companyName'} className='w-5 rounded-full' />
+           <img src={manaURL} alt={'companyName'} className='w-5 rounded-full' />
 
     </div>
 )
@@ -280,8 +278,7 @@ function DisplayMessages({messageData,myId}){
 
   else 
   return(
-    <div className='flex  mt-5'>
-      <div className='flex flex-row'></div>
+    <div className='flex   text-base mt-5'>
        <img src={judge} alt={'companyName'} className='w-5 rounded-full' />
       <div className='flex family-rubik    bg-white p-2 rounded-xl'>{messageData.message}</div>
       
