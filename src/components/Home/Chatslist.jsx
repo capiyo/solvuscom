@@ -23,7 +23,7 @@ export const Chats = () => {
                 if(user){
                    //  const lastId=JSON.stringify({user.userId})
              //setMyId(user.userId)
-                 fetch(`http://localhost:5000/jobs/getChatlist`).then(res =>res.json()).then(
+                 fetch(`https://solvus-api-4.onrender.com/jobs/getChatlist`).then(res =>res.json()).then(
             data =>( 
                 //console.log(data)
               // setApplicants(data)
@@ -146,7 +146,7 @@ function Card({ chatlist }) {
         message:"Congratulations  you are assgined the gig  od Angular dev from @Capiyo",
         status:"Started"
     }
-       fetch("http://localhost:5000/case/addWorkerChats", {
+       fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(messageData)
@@ -218,7 +218,7 @@ const sendPayments=(username,userId,userEmail)=>{
     }
 console.log(paymentData)
 
-    fetch("http://localhost:5000/payment/stk/push", {
+    fetch("https://solvus-api-4.onrender.com/payment/stk/push", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(paymentData)
