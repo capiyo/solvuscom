@@ -268,8 +268,8 @@ function DisplayMessages({messageData,myId}){
     console.log("here " +myId)
     return(
   <div className='flex   float-right justify-end   text-base w-full   mt-5'> 
-        <div className='flex family-rubik     bg-green-100 p-2 rounded-xl'>{messageData.message} </div>
-           <img src={manaURL} alt={'companyName'} className='w-5 rounded-full' />
+        <div className='flex family-rubik     bg-green-100 p-1 rounded-xl'>{messageData.message} </div>
+           <img src={manaURL} alt={'companyName'} className='w-5 rounded-full h-5' />
 
     </div>
 )
@@ -279,8 +279,8 @@ function DisplayMessages({messageData,myId}){
   else 
   return(
     <div className='flex   text-base mt-5'>
-       <img src={judge} alt={'companyName'} className='w-5 rounded-full' />
-      <div className='flex family-rubik    bg-white p-2 rounded-xl'>{messageData.message}</div>
+       <img src={judge} alt={'companyName'} className='w-5 h-5 rounded-full' />
+      <div className='flex family-rubik    bg-white p-1 rounded-xl'>{messageData.message}</div>
       
 
     </div>
