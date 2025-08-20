@@ -241,7 +241,7 @@ function Card({ chatlist }) {
          const  updateGigStatus={status:"agent",caseId:myCase}
     console.log(updateGigStatus)
     //s://solvus-api-4.onrender.com
-     fetch(`http://localhost:5000/case/current-case/update`, {
+     fetch(`https://solvus-api-4.onrender.com/case/current-case/update`, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
