@@ -11,6 +11,7 @@ export const Notifications = () => {
     const [applicants, setApplicants] = useState();
     const[chatlist,setChatlist]=useState([])
     const[loginData, setLoginData]=useState(LoginContext)
+    //let chatlist =[];
     //const[id,setId]=useState("")
 
   
@@ -24,18 +25,32 @@ export const Notifications = () => {
                    //  const lastId=JSON.stringify({user.userId})
              //setMyId(user.userId)
                  fetch(`https://solvus-api-4.onrender.com/case/getNotifications/${user.userId}`).then(res =>res.json()).then(
-            data =>( 
+            data =>{
+
+             setChatlist(data)
+                
+                
+                //if(data.status !=="agent") {
+                    // setChatlist(data)
+
+               // }
+               
+            }
                 //console.log(data)
-              // setApplicants(data)
-              setChatlist(data)
+            
+              
                 //console.log(applicants)
                
-            )
+            
 
             
         ).catch((error)=>console.log(error));
              
                 }
+
+              
+
+
 
       //  console.log(loginData+"hereeeee")
     }, [])
@@ -118,8 +133,14 @@ function Card({ chatlist }) {
            const caseTitel=useSelector((state)=>state.caseData["caseTitle"])
 
     const mybudget=useSelector((state)=>state.caseData["budget"])
+    let  notCounter;
+    for(let i=0;i<=chatlist.length;i++){
+        if(chatlist.status !=="agent"){
+            notCounter=notCounter+1
+        }
+    }
 
-           //console.log(gigStatus)
+           console.log(chatlist.caseId)
            
 
         
@@ -213,6 +234,58 @@ function Card({ chatlist }) {
 
   }
 
+  const acceptTask=(myCase)=>{
+    dispatch({type:"overlay",payload:"close"})
+     dispatch({type:"footerOverlay",payload:"close"})
+
+         const  updateGigStatus={status:"agent",caseId:myCase}
+    console.log(updateGigStatus)
+    //s://solvus-api-4.onrender.com
+     fetch(`http://localhost:5000/case/current-case/update`, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(updateGigStatus)
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json(); // Or response.text() if not expecting JSON
+})
+.then(data => {
+    setAssin(false)
+  console.log('Resource updated successfully:', data);
+})
+.catch(error => {
+  console.error('Error updating resource:', error);
+});
+
+
+    // open the chatpage with Id as params   it should be link
+    //changeCaseStatus
+
+
+
+  }
+    const getGigData=(gigTitle,gigId,budget,status)=>{
+        let   caseTitle=gigTitle
+        const data={
+            caseTitle:gigTitle,
+            caseId:gigId,
+            budget:budget
+        }
+
+                 dispatch({type:"caseData",payload:data})
+                 dispatch({type:"gigStatus",payload:status})
+
+
+
+                 console.log(data)
+
+            }
+
 
 
 const asssignNow =()=>{
@@ -271,25 +344,27 @@ console.log(paymentData)
 
 
         <div   className='border shadow-lg     w-[300px]       rounded-xl flex-row  bg-white card'>
-          
+        
+             
+           
         
             
           <div className='flex gap-3'>
                 <div>
-                    {/* company image */}
+                
                     <img src={logoURL} alt={chatlist.caseTitle} className='rounded-full w-12' />
                 </div>
                 <div>
                     <div className='flex items-center'>
                         <box-icon size='18px' name='time'></box-icon>
                         <span className='pl-1 text-black'>{chatlist.caseTitle}</span>
-                          <Link to={`/current-job/${chatlist.jobId}`}>
+                          <div >
                                             <div  className={`lg:block  text-blue-900 
                                                  mt-10 `}>
-                                                <div    onClick={closeOverlay} className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base '><FaEye/>view </div>
+                                                <div    onClick={closeOverlay} className='flex flex-row  text-purple-400   sm:text-[9px]  font-bold  lg:text-base '><FaEye/>decline </div>
                                                 </div>
                                                 
-                                        </Link>
+                                        </div>
                        
                     </div>
                     <h1 className='font-bold text-sm lg:text-lg text-black'>{chatlist.budget}</h1>
@@ -315,17 +390,27 @@ console.log(paymentData)
                     <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Ksh 3000</button>
                 </div>
                 <div>
-                    <button  onClick={confirmAssign} className=' lg:block bg-blue-600 text-black text-sm py-1 px-4 rounded-md'>Accept</button>
+                     <Link to={`/current-job/${chatlist._id}`}>
+                                        <div    
+                                                     onClick={()=>acceptTask(chatlist._id)} className={`lg:block  text-blue-900 
+                                         text-white text-sm `}>
+                                            <div    className='flex flex-row  text-blue-400   sm:text-[9px]  font-bold  lg:text-base '><FaEye/>Accept </div>
+                                            </div>
+                                            
+                                    </Link>
+                   
                 </div>
                 </div>
 
                 <div>
+                    </div>
+                    
                
-                            </div>       
+                            </div>  
 
                                   
                             
-        </div>
+        
     
     )
     

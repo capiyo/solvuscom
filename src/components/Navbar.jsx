@@ -151,20 +151,25 @@ export const Navbar = () => {
     const [height,setHeight]=useState("h-[50px]");
 
     useEffect(() => {
-
         let token = localStorage.getItem("user");
         const user = JSON.parse(token);
         setLoginData(user)
-        console.log(user.userid)
+        console.log(loginData)
+      if(user){
             fetch(`https://solvus-api-4.onrender.com/case/getNotifications/${user.userId}`).then(res => res.json()).then(
                 data => {
                     const newData = data
+                    
                     setNotification(data)
                     console.log(newData)
     
                 }
             ).catch((error)=>console.log(error));
-        console.log(loginData)
+        //console.log(loginData)
+      }
+      else{
+        console.log("Love")
+      }
     }, [])
 
     

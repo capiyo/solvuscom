@@ -144,7 +144,7 @@ function Card({ chatlist }) {
         workerName:userName,
       posterName:posterName,
       posterEmail:posterEmail,
-        message:"Congratulations  you are assgined the gig  od Angular dev from @Capiyo",
+        message:`Congratulations  you are assgined the gig  od Angular dev from${posterName} `,
         status:"Started"
     }
        fetch("https://solvus-api-4.onrender.com/case/addWorkerChats", {
@@ -315,7 +315,7 @@ console.log(paymentData)
                     <button className=' lg:block bg-green-100 text-black text-sm py-1 px-4 rounded-md'>Ksh 3000</button>
                 </div>
                 <div>
-                    <button  onClick={confirmAssign} className=' lg:block bg-blue-600 text-black text-sm py-1 px-4 rounded-md'>Live</button>
+                    <button  onClick={confirmAssign} className=' lg:block bg-blue-300 text-black text-sm py-1 px-4 rounded-md'>Live</button>
                 </div>
                 </div>
 
