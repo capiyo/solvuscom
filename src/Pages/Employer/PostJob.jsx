@@ -108,7 +108,9 @@ export const PostJob = () => {
             timePosted:timePosted,
             datePosted:datePosted,
             bossPhone:bossPhone,
-            status:"Open"
+            status:"Open",
+            agentId:"",
+            adminId:""
         }
         console.log(output)
           //setBossId(loginData.userId)
@@ -116,7 +118,7 @@ export const PostJob = () => {
         //const { loginData, setLoginData } = useContext(LoginContext);
         // send data to backend API
 
-                fetch("https://solvus-api-4.onrender.com/jobs/post-job", {
+                fetch("http://localhost:5000/jobs/post-job", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)
