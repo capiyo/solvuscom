@@ -118,7 +118,7 @@ export const PostJob = () => {
         //const { loginData, setLoginData } = useContext(LoginContext);
         // send data to backend API
 
-                fetch("http://localhost:5000/jobs/post-job", {
+                fetch("https://solvus-api-4.onrender.com/jobs/post-job", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(output)
