@@ -78,7 +78,7 @@ const loadLikes=(jobId)=>{
     
 
     return (
-     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto '>
+     <div className='w-[400px] flex-col absolute bottom-10 h-[700px]   mx-auto   overflow-y-auto  border-b-2 border-blue-500 pb-4'>
            <div className='flex flex-row justify-end bg-white rounded-t-xl h-10'>
             
                <h1   onClick={closeOverlay}   className='text-base  text-center  cursor-pointer bg-green-200 p-1 rounded-full text-black'>Back</h1>
@@ -236,6 +236,62 @@ const changebg=()=>{
 
 }
 
+    function getMessApplicantsData(userName,userId,userEmail){
+
+         const  messageData={
+        workerId:userId,
+        posterId:myId,
+        caseId:caseId,
+        caseTitle:caseTitel,
+        workerEmail:userEmail,
+        workerName:userName,
+      posterName:posterName,
+      posterEmail:posterEmail,
+        message:`Congratulations  you are assigned the gig  of ${caseTitel} from @${posterName}`,
+        status:"unchecked"
+    }
+       fetch("https://solvus-api-4.onrender.com/case/addNotifications", {
+            method: "POST",
+            headers: {'content-type' : 'application/json'},
+            body: JSON.stringify(messageData)
+            
+        })
+        .then((res) => res.json())
+        .then((result) => {
+            changeJobStatus()
+            //console.log(result);
+            
+          
+            //window.location.href = '/all-jobs';
+        })
+        .catch((error) => {
+            console.log(error);
+            toast.error("Failed to  To Notify,Please try again}");
+            setAssin(false)
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const showRequest=(jobId)=>{
     const output={
     "jobId":jobId,
@@ -253,6 +309,11 @@ const showRequest=(jobId)=>{
         })
         .then((res) => res.json())
         .then((result) => {
+            // send Notificatio n
+
+
+
+
             console.log(result);
             toast("Your Request was sent successfully")
 
@@ -292,7 +353,7 @@ const showRequest=(jobId)=>{
             }
 
     return (
-        <div      className={`border items-center shadow-sm     card    
+        <div      className={`border items-center shadow-sm     card     border-b-2 border-blue-500 pb-4 border-solid 
         rounded-xl `}>
           
             {/* Card Header */}
@@ -387,4 +448,5 @@ const showRequest=(jobId)=>{
           
               </div>
     )
+    }
 }

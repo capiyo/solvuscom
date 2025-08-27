@@ -66,7 +66,8 @@ export const Login = () => {
                             </div>
                             <div>
                                 <label className='block mt-2 m-1 text-sm'>Password</label>
-                                <input type='password' required {...register("userPassword")} placeholder='Enter your password' className='create-job-input placeholder:text-xs md:placeholder:text-sm'></input>
+                                <input type='password' required {...register("userPassword")} placeholder='Enter your password' 
+                                className='create-job-input placeholder:text-xs md:placeholder:text-sm'></input>
                             </div>
 
                         </div>

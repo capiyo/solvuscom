@@ -111,7 +111,7 @@ const loadLikes=(jobId)=>{
     
 
     return (
-        <div className=' '  ref={menuRef} >
+        <div className=' '  >
             
                            <div className='flex flex-col'><h1 className='text-center text-sm md:text-sm font-normal text-primary'>
                             Our Featured Jobs,<span className='text-blue-600'>
